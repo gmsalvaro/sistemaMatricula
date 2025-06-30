@@ -5,6 +5,7 @@ import java.util.*;
 
 public class Aluno {
 
+
     protected String nome;
     protected String matricula;
     protected int cargaHoraria;
@@ -56,5 +57,6 @@ public class Aluno {
     public boolean passouDisciplina(Disciplina disciplina){
          return disciplinasCursadas.get(disciplina) >= 60;
     }
+
 
 }
