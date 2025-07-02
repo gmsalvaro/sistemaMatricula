@@ -17,6 +17,15 @@ public abstract class Disciplina {
 
     abstract int getPrecendencia();
 
+    public int getCargaHoraria() {
+        return this.cargaHoraria;
+    }
+
+    public List<Disciplina> getCoRequisitos() {
+        return coRequisitos;
+    }
+
+
     protected void adicionarPreRequisito(Disciplina disciplina){
 
 

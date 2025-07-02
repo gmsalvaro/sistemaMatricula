@@ -4,19 +4,18 @@ import java.util.*;
 
 
 public class Aluno {
-
     protected String nome;
     protected String matricula;
     protected int cargaHoraria;
     protected Map<Disciplina, Double> disciplinasCursadas;
+    protected int numCredito;
     protected List<Turma> planejamentoFuturo;
 
-     Aluno(String  nome, String matricula, int cargaHoraria){
+     Aluno(String  nome, String matricula){
         this.nome = nome;
         this.matricula = matricula;
-        this.cargaHoraria = cargaHoraria;
         this.disciplinasCursadas = new HashMap<>();
-        //List n sei prosseguir
+
     }
 
     public String getNome() {
@@ -27,7 +26,8 @@ public class Aluno {
         int totalCreditos = 0;
         for (Map.Entry<Disciplina, Double> entry : disciplinasCursadas.entrySet()) {
             Disciplina d = entry.getKey();
-            totalCreditos += d.getPrecendencia(); // ou getPrecendencia() se for isso que você quer
+            if(verificaAprovado(d))
+                totalCreditos += d.getPrecendencia();
         }
         return totalCreditos;
     }
@@ -57,13 +57,17 @@ public class Aluno {
          return true;
     }
 
+    //calcular horarioMax também
 
 
-
-//    public boolean verificaPreRequisito(Disciplina disciplina){
-//         // encontrar com o mapa a disciplina associada ou associadas e verificar ;
-//
+//    public void calcularCreditos(int numCredito) {
+//        int numCreditos = 0;
+//        for (Map.Entry<Disciplina, Double> entry : disciplinasCursadas.entrySet()) {
+//            Disciplina d = entry.getKey();
+//            if(verificaAprovado(d))
+//                numCreditos += d.getPrecendencia();
+//        }
+//         this.numCredito = numCreditos;
 //    }
-
 
 }

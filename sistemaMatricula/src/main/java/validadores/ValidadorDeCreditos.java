@@ -3,7 +3,7 @@ package validadores;
 import modelo.Aluno;
 import modelo.Disciplina;
 
-public abstract class ValidadorDeCreditos implements ValidadorPreRequisito{
+public class ValidadorDeCreditos implements ValidadorPreRequisito{
     private Disciplina disciplina1;
     private int numCredito;
 
