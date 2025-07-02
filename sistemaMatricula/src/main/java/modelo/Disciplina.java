@@ -7,18 +7,19 @@ public abstract class Disciplina {
     protected String codigo;
     protected int cargaHoraria;
     protected List< Disciplina > coRequisitos;
-//    protected List<ValidadorPreRequisito>preRequisitos; Não entendi como vai funcionar o ValidadorList
+    protected ValidadorPreRequisito preRequisito; // Apenas uma condição
 
     public Disciplina(String  nome, String codigo, int cargaHoraria){
         this.nome = nome;
         this.codigo = codigo;
         this.cargaHoraria = cargaHoraria;
     }
-     // Funções basicas;
+
     abstract int getPrecendencia();
 
     protected void adicionarPreRequisito(Disciplina disciplina){
-        //Inserir logica do verificador depois;
+
+
 
     }
     protected void adicionarCoRequisito(Disciplina disciplina){

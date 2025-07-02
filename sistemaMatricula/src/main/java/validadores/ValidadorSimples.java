@@ -1,16 +1,16 @@
 package validadores;
 import modelo.Aluno;
 import modelo.Disciplina;
-import java.util.List;
 
 public class ValidadorSimples implements ValidadorPreRequisito{
-    protected List<Disciplina> Requisito; // acho que da pra colocar Disciplina sem list já que é uma só !!!!
-    public ValidadorSimples(List <Disciplina> Requisito){
-        this.Requisito = Requisito;
+    private Disciplina disciplina1;
+
+    public ValidadorSimples(Disciplina disciplina1, Disciplina disciplina2) {
+        this.disciplina1 = disciplina1;
     }
 
-    boolean verificaValidadorSimples(Aluno aluno){
-
+    @Override
+    public boolean verificarValidador(Aluno aluno) {
+        return aluno.verificaAprovado(disciplina1);
     }
-
 }
