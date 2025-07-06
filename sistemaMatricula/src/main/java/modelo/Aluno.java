@@ -4,33 +4,32 @@ import java.util.*;
 
 
 public class Aluno {
-
-
     protected String nome;
     protected String matricula;
     protected int cargaHoraria;
-
-    //Como é feito: o Map utiliza o HashMap para poder armazenar os valores Map<V, K> sendo
-    // V = Nome , K = Nota na disciplina, V= Algoritmos , K = 87 Por exemplo.
-    protected Map<Disciplina, Integer> disciplinasCursadas;
-
-    //Planejamento futuro nao entendi como implementar (Obs: turmas futuras)
+    protected Map<Disciplina, Double> disciplinasCursadas;
+    protected int numCredito;
     protected List<Turma> planejamentoFuturo;
 
-
-// COnstrutor do Aluno
-     Aluno(String  nome, String matricula, int cargaHoraria){
+     Aluno(String  nome, String matricula){
         this.nome = nome;
         this.matricula = matricula;
-        this.cargaHoraria = cargaHoraria;
         this.disciplinasCursadas = new HashMap<>();
-        //List n sei prosseguir
+
     }
 
-
-    //Getters
     public String getNome() {
         return nome;
+    }
+
+    public int getCreditos() {
+        int totalCreditos = 0;
+        for (Map.Entry<Disciplina, Double> entry : disciplinasCursadas.entrySet()) {
+            Disciplina d = entry.getKey();
+            if(verificaAprovado(d))
+                totalCreditos += d.getPrecendencia();
+        }
+        return totalCreditos;
     }
 
     public String getMatricula() {
@@ -41,22 +40,34 @@ public class Aluno {
         return cargaHoraria;
     }
 
-    public Map<Disciplina, Integer> getDisciplinasCursadas() {
-        return disciplinasCursadas;
+    public Map<Disciplina, Double> getDisciplinasCursadas() {
+        return disciplinasCursadas; // returna o Map
     }
-
-
 
     //Metodos:
 
-    public void adicionarDisciplinaCursada(Disciplina disciplina, int nota) {
+    public void adicionarDisciplinaCursada(Disciplina disciplina, double nota) {
         disciplinasCursadas.put(disciplina, nota);
     }
 
-    //Criar verificador se o aluno passou? ou utiliza os validadores?
-    public boolean passouDisciplina(Disciplina disciplina){
-         return disciplinasCursadas.get(disciplina) >= 60;
+    public boolean verificaAprovado(Disciplina disciplina){
+         if(disciplinasCursadas.get(disciplina) < 60){
+             //disparar a execção
+         }
+         return true;
     }
 
+    //calcular horarioMax também
+
+
+//    public void calcularCreditos(int numCredito) {
+//        int numCreditos = 0;
+//        for (Map.Entry<Disciplina, Double> entry : disciplinasCursadas.entrySet()) {
+//            Disciplina d = entry.getKey();
+//            if(verificaAprovado(d))
+//                numCreditos += d.getPrecendencia();
+//        }
+//         this.numCredito = numCreditos;
+//    }
 
 }

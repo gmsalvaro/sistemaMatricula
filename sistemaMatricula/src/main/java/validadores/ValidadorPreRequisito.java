@@ -1,8 +1,7 @@
 package validadores;
+import modelo.Aluno;
+import java.util.List;
 
 public interface ValidadorPreRequisito {
-//    boolean validarAluno();
-//    boolean validarPreRequisito();
-//
-  // Validador servirá apenas para verificar;
+    abstract boolean verificarValidador(Aluno aluno);
 }
