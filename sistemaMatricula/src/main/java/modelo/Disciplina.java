@@ -1,5 +1,7 @@
 package modelo;
 import validadores.ValidadorPreRequisito;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Disciplina {
@@ -13,9 +15,10 @@ public abstract class Disciplina {
         this.nome = nome;
         this.codigo = codigo;
         this.cargaHoraria = cargaHoraria;
+        this.coRequisitos = new ArrayList<>();
     }
 
-    abstract int getPrecendencia();
+    abstract int getPrecedencia();
 
     public int getCargaHoraria() {
         return this.cargaHoraria;
@@ -25,15 +28,16 @@ public abstract class Disciplina {
         return coRequisitos;
     }
 
-
-    protected void adicionarPreRequisito(Disciplina disciplina){
-
-
-
+    public void setCoRequisito(Disciplina coRequisito) {
+        this.coRequisitos.add(coRequisito);
     }
+
     protected void adicionarCoRequisito(Disciplina disciplina){
-        //Inserir logica do verificador depois;
         coRequisitos.add(disciplina);
+    }
+
+    public void setValidadorPreRequisito(ValidadorPreRequisito validador) {
+        this.preRequisito = validador;
     }
 
 }
