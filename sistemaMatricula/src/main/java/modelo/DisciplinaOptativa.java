@@ -9,7 +9,8 @@ public class DisciplinaOptativa extends Disciplina{
         super(nome, codigo, cargaHoraria);
     }
 
-    public int getPrecendencia(){
+    @Override
+    public int getPrecedencia(){
         return 1;
     }
 }

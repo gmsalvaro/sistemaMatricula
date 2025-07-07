@@ -3,7 +3,7 @@ package validadores;
 import modelo.Aluno;
 import modelo.Disciplina;
 
-public class ValidadorDeCreditos implements ValidadorPreRequisito{
+public abstract class ValidadorDeCreditos implements ValidadorPreRequisito{
     private Disciplina disciplina1;
     private int numCredito;
 
@@ -16,5 +16,7 @@ public class ValidadorDeCreditos implements ValidadorPreRequisito{
     public boolean verificarValidador(Aluno aluno) {
         return aluno.getCreditos() >= numCredito;
     }
+
+
 
 }

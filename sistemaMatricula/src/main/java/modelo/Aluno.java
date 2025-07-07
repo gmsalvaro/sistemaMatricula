@@ -1,5 +1,8 @@
 package modelo;
 
+import excecoes.ValidacaoAprovado;
+
+import java.sql.SQLOutput;
 import java.util.*;
 
 
@@ -22,16 +25,6 @@ public class Aluno {
         return nome;
     }
 
-    public int getCreditos() {
-        int totalCreditos = 0;
-        for (Map.Entry<Disciplina, Double> entry : disciplinasCursadas.entrySet()) {
-            Disciplina d = entry.getKey();
-            if(verificaAprovado(d))
-                totalCreditos += d.getPrecendencia();
-        }
-        return totalCreditos;
-    }
-
     public String getMatricula() {
         return matricula;
     }
@@ -51,23 +44,8 @@ public class Aluno {
     }
 
     public boolean verificaAprovado(Disciplina disciplina){
-         if(disciplinasCursadas.get(disciplina) < 60){
-             //disparar a execção
-         }
-         return true;
+         double nota = disciplinasCursadas.get(disciplina);
+         return nota >= 60;
     }
-
-    //calcular horarioMax também
-
-
-//    public void calcularCreditos(int numCredito) {
-//        int numCreditos = 0;
-//        for (Map.Entry<Disciplina, Double> entry : disciplinasCursadas.entrySet()) {
-//            Disciplina d = entry.getKey();
-//            if(verificaAprovado(d))
-//                numCreditos += d.getPrecendencia();
-//        }
-//         this.numCredito = numCreditos;
-//    }
 
 }

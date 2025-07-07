@@ -10,8 +10,8 @@ public class DisciplinaObrigatoria extends Disciplina {
     public DisciplinaObrigatoria(String codigo, String nome, int cargaHoraria){
         super(nome, codigo, cargaHoraria);
     }
-
-    public int getPrecendencia(){
+    @Override
+    public int getPrecedencia(){
         return 3;
     }
 }
