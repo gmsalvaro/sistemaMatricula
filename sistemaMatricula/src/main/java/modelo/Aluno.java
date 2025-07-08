@@ -1,24 +1,24 @@
 package modelo;
 
-import excecoes.ValidacaoAprovado;
-
-import java.sql.SQLOutput;
-import java.util.*;
-
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 public class Aluno {
     protected String nome;
     protected String matricula;
-    protected int cargaHoraria;
+    protected int cargaHorariaMax;
     protected Map<Disciplina, Double> disciplinasCursadas;
-    protected int numCredito;
     protected List<Turma> planejamentoFuturo;
 
-     Aluno(String  nome, String matricula){
+    public Aluno(String nome, String matricula, int cargaHorariaMax) {
         this.nome = nome;
         this.matricula = matricula;
+        this.cargaHorariaMax = cargaHorariaMax;
         this.disciplinasCursadas = new HashMap<>();
-
+        this.planejamentoFuturo = new ArrayList<>();
     }
 
     public String getNome() {
@@ -29,23 +29,38 @@ public class Aluno {
         return matricula;
     }
 
-    public int getCargaHoraria() {
-        return cargaHoraria;
+    public int getCargaHorariaMax() {
+        return cargaHorariaMax;
+    }
+
+    public List<Turma> getPlanejamentoFuturo() {
+        return planejamentoFuturo;
     }
 
     public Map<Disciplina, Double> getDisciplinasCursadas() {
-        return disciplinasCursadas; // returna o Map
+        return disciplinasCursadas; // Retorna o Map
     }
-
-    //Metodos:
 
     public void adicionarDisciplinaCursada(Disciplina disciplina, double nota) {
-        disciplinasCursadas.put(disciplina, nota);
+        if (disciplina != null) {
+            disciplinasCursadas.put(disciplina, nota);
+        }
     }
 
-    public boolean verificaAprovado(Disciplina disciplina){
-         double nota = disciplinasCursadas.get(disciplina);
-         return nota >= 60;
+    public boolean cumpriuPreRequisito(Disciplina disciplinaPreRequisito) {
+        return disciplinasCursadas.containsKey(disciplinaPreRequisito) &&
+                disciplinasCursadas.get(disciplinaPreRequisito) >= 60.0;
     }
 
+    public void adicionarTurmaAoPlanejamento(Turma turma) {
+        if (turma != null && !this.planejamentoFuturo.contains(turma)) {
+            this.planejamentoFuturo.add(turma);
+        }
+    }
+
+    public void removerTurmaDoPlanejamento(Turma turma) {
+        if (turma != null) {
+            this.planejamentoFuturo.remove(turma);
+        }
+    }
 }

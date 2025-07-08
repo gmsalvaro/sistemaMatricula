@@ -1,4 +1,6 @@
 package modelo;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Turma {
@@ -6,17 +8,18 @@ public class Turma {
     private Disciplina disciplina;
     private int capacidadeMax;
     private int numMatriculados;
-    private String diaSemana;
     private String horario;
-    protected List<Aluno> turmaAlunos;
+    protected List<Aluno> alunosTurma;
 
-    public Turma(String id, Disciplina disciplina, int capacidadeMaxima, String horario){
+    public Turma(String id, Disciplina disciplina, int capacidadeMaxima, String horario) {
         this.id = id;
         this.disciplina = disciplina;
         this.capacidadeMax = capacidadeMaxima;
         this.horario = horario;
         this.numMatriculados = 0;
+        this.alunosTurma = new ArrayList<>();
     }
+
     public String getId() {
         return id;
     }
@@ -33,23 +36,21 @@ public class Turma {
         return numMatriculados;
     }
 
-    public String getDiaSemana() {
-        return diaSemana;
-    }
-
     public String getHorario() {
         return horario;
     }
 
-    public void matriculaAluno(Disciplina disciplina, Aluno aluno){
-        if(numMatriculados < capacidadeMax) {
-            turmaAlunos.add(aluno);
-            numMatriculados++;
-        } else {
-            //execpional;
-        }
-
-
+    public boolean isCheia() {
+        return numMatriculados >= capacidadeMax;
     }
 
+    public void matricularAluno() {
+        this.numMatriculados++;
+    }
+
+    public void desmatricularAluno() {
+        if (this.numMatriculados > 0) {
+            this.numMatriculados--;
+        }
+    }
 }

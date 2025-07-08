@@ -18,10 +18,17 @@ public abstract class Disciplina {
         this.coRequisitos = new ArrayList<>();
     }
 
-    abstract int getPrecedencia();
+    public abstract int getPrecedencia();
 
+    public String getCodigo(){
+        return codigo;
+    }
     public int getCargaHoraria() {
         return this.cargaHoraria;
+    }
+
+    public String getNome(){
+        return nome;
     }
 
     public List<Disciplina> getCoRequisitos() {
@@ -32,12 +39,16 @@ public abstract class Disciplina {
         this.coRequisitos.add(coRequisito);
     }
 
-    protected void adicionarCoRequisito(Disciplina disciplina){
+    public void adicionarCoRequisito(Disciplina disciplina){
         coRequisitos.add(disciplina);
     }
 
     public void setValidadorPreRequisito(ValidadorPreRequisito validador) {
         this.preRequisito = validador;
+    }
+
+    public ValidadorPreRequisito getValidadorPreRequisito(){
+            return preRequisito;
     }
 
 }
