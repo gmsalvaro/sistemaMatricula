@@ -1,4 +1,5 @@
 package servico;
+import servico.verificaEntrada;
 
 public class prints {
     verificaEntrada entrada = new verificaEntrada();

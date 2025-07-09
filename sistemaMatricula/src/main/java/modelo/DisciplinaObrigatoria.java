@@ -1,4 +1,5 @@
 package modelo;
+import modelo.Disciplina;
 
 import java.util.List;
 

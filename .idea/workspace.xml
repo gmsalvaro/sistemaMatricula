@@ -1,30 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a81c581d-1242-48a9-98b4-fa3c9baf1b4f" name="Changes" comment="" />
+    <list default="true" id="a81c581d-1242-48a9-98b4-fa3c9baf1b4f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/codeInsightSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sistemaMatricula/src/test/SistemaMatriculaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sistemaMatricula.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sistemaMatricula.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/Controle/SistemaMatricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/Controle/SistemaMatricula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/GerenciamentoVagasException.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/GerenciamentoVagasException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Aluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Disciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaEletiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaEletiva.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaObrigatoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaObrigatoria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaOptativa.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaOptativa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Turma.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Turma.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/servico/prints.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/servico/prints.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorAND.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorAND.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorSimples.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorSimples.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="module-info" />
+        <option value="Class" />
+        <option value="package-info" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "gmsalvaro"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;gmsalvaro&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/gmsalvaro/sistemaMatricula.git",
-    "accountId": "4e24af08-1924-4f83-8114-2c922639b475"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/gmsalvaro/sistemaMatricula.git&quot;,
+    &quot;accountId&quot;: &quot;2d6afeac-dff5-41a0-a226-8267e7b37923&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2zCj584NDCSdxGGObICFu7h8iIC" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,11 +64,97 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.SimulacaoMatricula.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.SistemaMatriculaTest (1).executor": "Run",
+    "JUnit.SistemaMatriculaTest.executor": "Run",
+    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina (1).executor": "Run",
+    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_directory_selection": "C:/Users/Meu/IdeaProjects/sistemaMatricula-Testes/sistemaMatricula/src/test",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.SistemaMatriculaTest (1)">
+    <configuration name="SistemaMatriculaTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sistemaMatricula" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SistemaMatriculaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sistemaMatricula" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Controle" />
+      <option name="MAIN_CLASS_NAME" value="Controle.SistemaMatriculaTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sistemaMatricula" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
+      <option name="METHOD_NAME" value="tentarMatricularDisciplina" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sistemaMatricula" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controle.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Controle" />
+      <option name="MAIN_CLASS_NAME" value="Controle.SistemaMatriculaTest" />
+      <option name="METHOD_NAME" value="tentarMatricularDisciplina" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.SistemaMatriculaTest (1)" />
+        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina (1)" />
+        <item itemvalue="JUnit.SistemaMatriculaTest" />
+        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a81c581d-1242-48a9-98b4-fa3c9baf1b4f" name="Changes" comment="" />

@@ -1,4 +1,5 @@
 package validadores;
+import validadores.ValidadorPreRequisito;
 
 import modelo.Aluno;
 import java.util.Arrays;

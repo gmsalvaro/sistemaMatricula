@@ -1,4 +1,5 @@
 package modelo;
+import modelo.Disciplina;
 
 public class DisciplinaOptativa extends Disciplina{
     protected String nome;

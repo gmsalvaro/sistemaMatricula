@@ -1,5 +1,7 @@
 package modelo;
 
+import modelo.Disciplina;
+import modelo.Turma;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -44,6 +46,7 @@ public class Aluno {
     public void adicionarDisciplinaCursada(Disciplina disciplina, double nota) {
         if (disciplina != null) {
             disciplinasCursadas.put(disciplina, nota);
+
         }
     }
 

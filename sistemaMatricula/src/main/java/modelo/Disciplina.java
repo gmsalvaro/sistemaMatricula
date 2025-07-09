@@ -11,9 +11,9 @@ public abstract class Disciplina {
     protected List< Disciplina > coRequisitos;
     protected ValidadorPreRequisito preRequisito; // Apenas uma condição
 
-    public Disciplina(String  nome, String codigo, int cargaHoraria){
-        this.nome = nome;
+    public Disciplina(String  codigo, String nome, int cargaHoraria){
         this.codigo = codigo;
+        this.nome = nome;
         this.cargaHoraria = cargaHoraria;
         this.coRequisitos = new ArrayList<>();
     }

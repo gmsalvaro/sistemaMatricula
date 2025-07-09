@@ -41,6 +41,9 @@ public class SistemaMatricula {
             turmaDesejada.matricularAluno();
             return "ACEITA: Matrícula em '" + disciplinaAtual.getNome() + "' realizada com sucesso.";
 
+
+            //
+
         } catch (PreRequisitoNaoCumpridoException e) {
             throw new RuntimeException(e);
         } catch (CoRequisitoNaoAtendidoException e) {
