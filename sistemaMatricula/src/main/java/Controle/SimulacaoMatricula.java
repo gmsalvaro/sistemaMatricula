@@ -12,7 +12,7 @@ import validadores.ValidadorSimples;
 
 public class SimulacaoMatricula {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws excecoes.CoRequisitoNaoAtendidoException, excecoes.PreRequisitoNaoCumpridoException, excecoes.TurmaCheiaException, excecoes.ConflitoDeHorarioException, excecoes.CargaHorariaExcedidaException {
         System.out.println("--- Iniciando Simulação de Matrícula ---");
 
         // 1. Criar Disciplinas

@@ -8,7 +8,7 @@ public class DisciplinaObrigatoria extends Disciplina {
     protected String codigo;
     protected int cargaHoraria;
 
-    public DisciplinaObrigatoria(String codigo, String nome, int cargaHoraria){
+    public DisciplinaObrigatoria(String nome, String codigo, int cargaHoraria){
         super(nome, codigo, cargaHoraria);
     }
     @Override

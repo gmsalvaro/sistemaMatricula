@@ -6,7 +6,7 @@ public class DisciplinaOptativa extends Disciplina{
     protected String codigo;
     protected int cargaHoraria;
 
-    public DisciplinaOptativa(String codigo, String nome, int cargaHoraria){
+    public DisciplinaOptativa(String nome, String codigo, int cargaHoraria){
         super(nome, codigo, cargaHoraria);
     }
 

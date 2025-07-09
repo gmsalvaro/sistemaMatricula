@@ -22,6 +22,7 @@ public class SistemaMatricula {
         this.geradorRelatorio = new GeradorRelatorio();
     }
 
+    /*
     public String tentarMatricularDisciplina(Aluno aluno, Turma turmaDesejada) {
         if (aluno == null || turmaDesejada == null) {
             return "REJEITADA: Aluno ou turma não podem ser nulos.";
@@ -42,7 +43,7 @@ public class SistemaMatricula {
             return "ACEITA: Matrícula em '" + disciplinaAtual.getNome() + "' realizada com sucesso.";
 
 
-            //
+            // Implementaçao errada, esta matando o codigo na execuçao do mesmo!
 
         } catch (PreRequisitoNaoCumpridoException e) {
             throw new RuntimeException(e);
@@ -56,6 +57,31 @@ public class SistemaMatricula {
             throw new RuntimeException(e);
         }
     }
+     */
+
+    public String tentarMatricularDisciplina(Aluno aluno, Turma turmaDesejada)
+            throws PreRequisitoNaoCumpridoException, CoRequisitoNaoAtendidoException,
+            TurmaCheiaException, ConflitoDeHorarioException, CargaHorariaExcedidaException {
+        if (aluno == null || turmaDesejada == null) {
+            return "REJEITADA: Aluno ou turma não podem ser nulos.";
+        }
+
+        Disciplina disciplinaAtual = turmaDesejada.getDisciplina();
+
+        validarVagas(turmaDesejada, disciplinaAtual);
+        validarPreRequisito(aluno, disciplinaAtual);
+        validarCoRequisitos(aluno, disciplinaAtual);
+        validarCargaHoraria(aluno, disciplinaAtual);
+
+        resolveConflitoHorario.resolverConflitoHorario(aluno, turmaDesejada, disciplinaAtual);
+
+        aluno.adicionarTurmaAoPlanejamento(turmaDesejada);
+        turmaDesejada.matricularAluno();
+
+        return "ACEITA: Matrícula em '" + disciplinaAtual.getNome() + "' realizada com sucesso.";
+    }
+
+
 
     private void validarVagas(Turma turma, Disciplina disciplina) throws TurmaCheiaException {
         if (turma.isCheia()) {
@@ -68,6 +94,7 @@ public class SistemaMatricula {
         if (validador != null) {
             if (!validador.verificarValidador(aluno)) {
                 throw new PreRequisitoNaoCumpridoException(validador.getMensagemErro());
+
             }
         }
     }
