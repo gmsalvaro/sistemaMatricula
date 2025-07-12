@@ -1,7 +1,10 @@
-package Controle;
+package controll;
 
 import modelo.Aluno;
+import modelo.Disciplina;
 import modelo.Turma;
+
+import java.util.List;
 
 public class GeradorRelatorio {
 
@@ -14,19 +17,19 @@ public class GeradorRelatorio {
         sb.append("-----------------------------------------------------------------------------------------------------\n");
 
         int cargaHorariaAceitaTotal = 0;
-        java.util.List<Turma> turmasAceitas = aluno.getPlanejamentoFuturo();
+        List<Turma> turmasAceitas = aluno.getPlanejamentoFuturo();
 
         sb.append("Disciplinas Aceitas no Planejamento:\n");
         if (turmasAceitas.isEmpty()) {
             sb.append("  Nenhuma disciplina aceita.\n");
         } else {
             for (Turma turma : turmasAceitas) {
-                sb.append("  - ").append(turma.getDisciplina().getNome())
-                        .append(" (").append(turma.getDisciplina().getCodigo()).append(")")
-                        .append(" - Turma ").append(turma.getId())
-                        .append(" - Horário: ").append(turma.getHorario())
-                        .append(" - Carga Horária: ").append(turma.getDisciplina().getCargaHoraria()).append("h\n");
-                cargaHorariaAceitaTotal += turma.getDisciplina().getCargaHoraria();
+//                sb.append("  - ").append(turma.getDisciplina().getNome())
+//                        .append(" (").append(turma.getDisciplina().getCodigo()).append(")")
+//                        .append(" - Turma ").append(turma.getId())
+//                        .append(" - Horário: ").append(turma.getHorario())
+//                        .append(" - Carga Horária: ").append(turma.getDisciplina().getCargaHoraria()).append("h\n");
+//                cargaHorariaAceitaTotal += turma.getDisciplina().getCargaHoraria();
             }
             sb.append("  Carga Horária Total Aceita: ").append(cargaHorariaAceitaTotal).append("h\n");
         }

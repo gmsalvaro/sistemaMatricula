@@ -1,23 +1,23 @@
 package modelo;
-
 import modelo.Disciplina;
 import modelo.Turma;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 public class Aluno {
     protected String nome;
     protected String matricula;
     protected int cargaHorariaMax;
+    protected int creditoMax = 0;
     protected Map<Disciplina, Double> disciplinasCursadas;
     protected List<Turma> planejamentoFuturo;
 
-    public Aluno(String nome, String matricula, int cargaHorariaMax) {
+    public Aluno(String nome, String matricula, int creditoMax, int cargaHorariaMax) {
         this.nome = nome;
         this.matricula = matricula;
+        this.creditoMax = creditoMax;
         this.cargaHorariaMax = cargaHorariaMax;
         this.disciplinasCursadas = new HashMap<>();
         this.planejamentoFuturo = new ArrayList<>();
@@ -46,7 +46,6 @@ public class Aluno {
     public void adicionarDisciplinaCursada(Disciplina disciplina, double nota) {
         if (disciplina != null) {
             disciplinasCursadas.put(disciplina, nota);
-
         }
     }
 
@@ -65,5 +64,34 @@ public class Aluno {
         if (turma != null) {
             this.planejamentoFuturo.remove(turma);
         }
+    }
+        public int getCargaHorariaAtualNoPlanejamento() { // Novo método
+        int cargaHorariaAtual = 0;
+        for (Turma turma : planejamentoFuturo) {
+            cargaHorariaAtual += turma.getDisciplina().getCargaHoraria(); // Soma carga horária
+        }
+        return cargaHorariaAtual;
+    }
+
+    public int getCargaHoraria(){
+        return cargaHorariaMax;
+    }
+
+    public int getCreditoMax(){
+        return creditoMax;
+    }
+
+    public int getCreditosAcumulados() {
+        int creditosAcumulados = 0;
+        for (Map.Entry<Disciplina, Double> d : disciplinasCursadas.entrySet()) {
+            if (d.getValue() >= 60.0) {
+                creditosAcumulados += d.getKey().getCredito();
+            }
+        }
+        return creditosAcumulados;
+    }
+
+    public void setCreditoMax(int i) {
+        creditoMax = i;
     }
 }

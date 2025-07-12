@@ -1,13 +1,13 @@
 package modelo;
-import modelo.Disciplina;
 
-public class DisciplinaEletiva extends Disciplina{
+public class DisciplinaEletiva extends modelo.Disciplina {
     protected String nome;
     protected String codigo;
+    int numCredito;
     protected int cargaHoraria;
 
-    public DisciplinaEletiva(String nome, String codigo, int cargaHoraria){
-        super(nome, codigo, cargaHoraria);
+    public DisciplinaEletiva(String nome, String codigo, int cargaHoraria, int numCredito){
+        super(nome, codigo, cargaHoraria, numCredito);
     }
     @Override
     public int getPrecedencia(){
