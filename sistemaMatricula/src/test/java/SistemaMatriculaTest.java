@@ -66,9 +66,7 @@ class SistemaMatriculaTest {
         sistema = new SistemaMatricula();
 
         // Inicialização do aluno padrão com limites razoáveis para os testes
-        alunoPadrao = new Aluno("Alice", "2023001", 120, 240); // Ex: 120 créditos máx, 240h carga horária máx
-        alunoPadrao.setCreditoMax(24); // Definindo um limite de créditos mais apertado para testes específicos
-        alunoPadrao.setCargaHorariaMax(180); // Definindo uma carga horária mais apertada para testes específicos
+        alunoPadrao = new Aluno("Alice", "2023001", 24, 180); // Ex: 120 créditos máx, 240h carga horária máx
 
 
         // Inicialização das Disciplinas (código, nome, cargaHoraria, créditos)
@@ -234,20 +232,17 @@ class SistemaMatriculaTest {
 
     @Test
     void tentarMatricularDisciplina_CreditosInsuficienteException() {
-        // Cenário: Aluno tem limite de créditos de 24.
-        // Já tem Cálculo I (4 créditos).
-        // Adiciona uma disciplina auxiliar (18 créditos). Total 4 + 18 = 22.
-        alunoPadrao.adicionarTurmaAoPlanejamento(turmaCalc1); // Créditos atuais: 4
 
-        // Adiciona uma disciplina auxiliar para chegar perto do limite
-        Disciplina auxCreditos = new DisciplinaObrigatoria("AUX2", "Auxiliar Creditos", 30, 18);
+        alunoPadrao.adicionarDisciplinaCursada(prog1, 75.0); // 4
+
+        Disciplina auxCreditos = new DisciplinaObrigatoria("AUX2", "Auxiliar Creditos", 60, 18);
+        validadores.ValidadorCreditosMin validadorCreditosMin = new validadores.ValidadorCreditosMin(auxCreditos, 10);
+        auxCreditos.setValidadorPreRequisito(validadorCreditosMin);
         Turma turmaAuxCreditos = new Turma("T-ACr", auxCreditos, 30, "Qui 15h-17h");
-        alunoPadrao.adicionarTurmaAoPlanejamento(turmaAuxCreditos); // Créditos atuais: 4 + 18 = 22
 
-        // Tenta matricular Álgebra Linear (4 créditos). Total seria 22 + 4 = 26, excede 24.
-        assertThrows(CreditosInsuficienteException.class, () -> {
-            sistema.tentarMatricularDisciplina(alunoPadrao, turmaAlgebra);
+        assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
+            sistema.tentarMatricularDisciplina(alunoPadrao, turmaAuxCreditos);
         });
-        assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaAlgebra));
+        assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaAuxCreditos));
     }
 }
