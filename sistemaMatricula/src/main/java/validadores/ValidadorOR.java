@@ -1,44 +1,59 @@
 package validadores;
-
 import modelo.Aluno;
-import java.util.Arrays;
-import java.util.List;
 
-public class ValidadorOR implements ValidadorPreRequisito {
-    private List<ValidadorPreRequisito> validadores;
+import java.util.Map;
+
+public class ValidadorOR implements validadores.ValidadorPreRequisito {
+    modelo.Disciplina preRequisito1;
+    modelo.Disciplina preRequisito2;
     private String mensagemErro;
 
-    public ValidadorOR(ValidadorPreRequisito... validadores) {
-        this.validadores = Arrays.asList(validadores);
+    public ValidadorOR(modelo.Disciplina preRequisito1, modelo.Disciplina preRequisito2) {
+        this.preRequisito1 = preRequisito1;
+        this.preRequisito2 = preRequisito2;
     }
 
     @Override
     public boolean verificarValidador(Aluno aluno) {
-        StringBuilder sucessos = new StringBuilder();
-        StringBuilder falhasTotal = new StringBuilder();
-        boolean algumValido = false;
+        Map<modelo.Disciplina, Double> disciplinasCursadasMap = aluno.getDisciplinasCursadas();
+        boolean cumpriuPreRequisito1 = false ;
+        boolean cumpriuPreRequisito2 = false;
+        for (modelo.Disciplina disciplinaCursada : disciplinasCursadasMap.keySet()) {
+            if (disciplinaCursada.equals(preRequisito1)) {
+                cumpriuPreRequisito1 = true;
+            }
+            if (disciplinaCursada.equals(preRequisito2)) {
 
-        for (ValidadorPreRequisito validador : validadores) {
-            if (validador.verificarValidador(aluno)) {
-                algumValido = true;
-                sucessos.append(" (OR) ").append(validador.getMensagemErro());
+                cumpriuPreRequisito2 = true;
+            }
+            if (cumpriuPreRequisito1 || cumpriuPreRequisito2) {
                 break;
-            } else {
-                falhasTotal.append(" (OR) ").append(validador.getMensagemErro());
             }
         }
 
-        if (!algumValido) {
-            mensagemErro = "Nenhum dos requisitos OR foi atendido:" + falhasTotal.toString();
+        if (cumpriuPreRequisito1 || cumpriuPreRequisito2) {
+            return true;
         } else {
-            mensagemErro = "Um dos requisitos OR foi atendido: " + sucessos.toString();
+            // Constrói a mensagem de erro detalhada
+            StringBuilder sb = new StringBuilder("Pré-requisito(s) não cumprido(s): ");
+            if (!cumpriuPreRequisito1) {
+                sb.append(preRequisito1.getNome());
+            }
+            if (!cumpriuPreRequisito2) {
+                if (!cumpriuPreRequisito1) {
+                    sb.append(" e ");
+                }
+                sb.append(preRequisito2.getNome());
+            }
+            this.mensagemErro = sb.toString();
+            return false;
         }
-
-        return algumValido;
     }
 
     @Override
     public String getMensagemErro() {
         return mensagemErro;
     }
+
 }
+
