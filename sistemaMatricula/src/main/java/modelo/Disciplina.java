@@ -18,6 +18,7 @@ public abstract class Disciplina {
         this.nome = nome;
         this.cargaHoraria = cargaHoraria;
         this.credito = numCredito;
+        coRequisitos = new ArrayList<>();
     }
 
     public abstract int getPrecedencia();
@@ -40,10 +41,6 @@ public abstract class Disciplina {
 
     public void setCoRequisito(Disciplina coRequisito) {
         this.coRequisitos.add(coRequisito);
-    }
-
-    public void adicionarCoRequisito(Disciplina disciplina){
-        coRequisitos.add(disciplina);
     }
 
     public void setValidadorPreRequisito(ValidadorPreRequisito validador) {

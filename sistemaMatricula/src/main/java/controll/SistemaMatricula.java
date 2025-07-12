@@ -1,13 +1,10 @@
 package controll;
-import controll.ResolveConflitoHorario;
-import controll.GeradorRelatorio;
 import excecoes.CargaHorariaExcedidaException;
 import excecoes.CoRequisitoNaoAtendidoException;
 import excecoes.ConflitoDeHorarioException;
 import excecoes.CreditosInsuficienteException;
 import excecoes.PreRequisitoNaoCumpridoException;
 import excecoes.TurmaCheiaException;
-import validadores.ValidadorCreditos;
 import validadores.ValidadorCoRequisito;
 import validadores.ValidadorCargaHoraria;
 import modelo.Aluno;
@@ -34,7 +31,6 @@ public class SistemaMatricula {
         validarVagas(turmaDesejada, disciplinaAtual);
         validarPreRequisito(aluno, disciplinaAtual);
         validarCargaHoraria(aluno, disciplinaAtual);
-        //validarCreditosMaximos(aluno, disciplinaAtual);
         validarCoRequisitos(aluno, disciplinaAtual.getCoRequisitos());
         resolveConflitoHorario.resolverConflitoHorario(aluno, turmaDesejada, disciplinaAtual);
         aluno.adicionarTurmaAoPlanejamento(turmaDesejada);
@@ -67,20 +63,16 @@ public class SistemaMatricula {
             }
         }
     }
+    public void validarCreditosMin(Aluno aluno, Disciplina disciplina) throws CreditosInsuficienteException{
+        throw new CreditosInsuficienteException("dsdasd");
+    }
+
 
     private void validarCargaHoraria(Aluno aluno, Disciplina disciplina) throws CargaHorariaExcedidaException {
         ValidadorCargaHoraria validadorCargaHoraria = new ValidadorCargaHoraria(aluno, disciplina);
         if (!validadorCargaHoraria.validarCargaHoraria()) {
             throw new CargaHorariaExcedidaException(
                     "Carga horária máxima (" + aluno.getCargaHoraria() + "h) excedida ao adicionar '" + disciplina.getNome() + "'.");
-        }
-    }
-
-    private void validarCreditosMaximos(Aluno aluno, Disciplina disciplina) throws excecoes.CreditosInsuficienteException {
-        ValidadorCreditos validador = new ValidadorCreditos(aluno, disciplina);
-        if (!validador.verificarQtdCredito(aluno, disciplina)) {
-            throw new excecoes.CreditosInsuficienteException(
-                    "Créditos máximos (" + aluno.getCreditoMax() + " créditos) excedidos ao adicionar '" + disciplina.getNome() + "'.");
         }
     }
 

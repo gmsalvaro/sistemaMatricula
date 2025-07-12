@@ -6,17 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="a81c581d-1242-48a9-98b4-fa3c9baf1b4f" name="Changes" comment="Ajustabndo Sistema e Validadores">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/controll/SistemaMatricula.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/modelo/Aluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sistemaMatricula/modelo/Aluno.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/modelo/Disciplina.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sistemaMatricula/modelo/Disciplina.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorAND.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorAND.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorOR.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorOR.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorSimples.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorSimples.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorCreditos.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorPreRequisito.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorPreRequisito.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/test/sistemaMatricula/SistemaMatriculaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/sistemaMatricula/SistemaMatriculaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/SistemaMatricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/SistemaMatricula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Aluno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Disciplina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorAND.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorAND.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorOR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorSimples.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorSimples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCreditos.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCreditosMin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,10 +67,14 @@
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplinaPre.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CargaHorariaExcedidaException.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido.executor": "Run",
+    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoDeHorarioException.executor": "Run",
+    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente.executor": "Run",
+    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoSimplesNaoCumprido.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComCoRequisito.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComPreRequisito.executor": "Run",
+    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException.executor": "Run",
     "JUnit.SistemaMatriculaTest.testCargaHorariaExcedidaException.executor": "Run",
     "JUnit.SistemaMatriculaTest.testCoRequisitoNaoAtendido.executor": "Run",
     "JUnit.SistemaMatriculaTest.testPreRequisitoSimplesNaoCumprido.executor": "Run",
@@ -105,7 +108,17 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido">
+  <component name="RunManager" selected="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException">
+    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_CargaHorariaExcedidaException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sistemaMatricula" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
+      <option name="METHOD_NAME" value="tentarMatricularDisciplina_CargaHorariaExcedidaException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemaMatricula" />
       <option name="PACKAGE_NAME" value="" />
@@ -116,41 +129,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoDeHorarioException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemaMatricula" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
-      <option name="METHOD_NAME" value="tentarMatricularDisciplina_PreRequisitoANDNaoCumprido" />
+      <option name="METHOD_NAME" value="tentarMatricularDisciplina_ConflitoDeHorarioException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemaMatricula" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
-      <option name="METHOD_NAME" value="tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente" />
+      <option name="METHOD_NAME" value="tentarMatricularDisciplina_CreditosInsuficienteException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComCoRequisito" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemaMatricula" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
-      <option name="METHOD_NAME" value="tentarMatricularDisciplina_SucessoComCoRequisito" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComPreRequisito" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sistemaMatricula" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
-      <option name="METHOD_NAME" value="tentarMatricularDisciplina_SucessoComPreRequisito" />
+      <option name="METHOD_NAME" value="tentarMatricularDisciplina_TurmaCheiaException" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -158,10 +161,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido" />
-        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente" />
-        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComPreRequisito" />
-        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComCoRequisito" />
+        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException" />
+        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CargaHorariaExcedidaException" />
+        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoDeHorarioException" />
+        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException" />
         <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido" />
       </list>
     </recent_temporary>
@@ -198,7 +201,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752351888933</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Ajustabndo Sistema e Validadores">
+      <option name="closed" value="true" />
+      <created>1752355950213</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752355950213</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
