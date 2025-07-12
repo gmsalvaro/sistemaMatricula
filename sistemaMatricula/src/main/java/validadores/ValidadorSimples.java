@@ -1,9 +1,8 @@
 package validadores;
-
 import modelo.Aluno;
 import modelo.Disciplina;
 
-public class ValidadorSimples implements ValidadorPreRequisito {
+public class ValidadorSimples implements validadores.ValidadorPreRequisito {
     private Disciplina preRequisito;
     private String mensagemErro = " "; // Para armazenar a mensagem específica
 

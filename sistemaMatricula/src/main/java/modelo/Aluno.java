@@ -91,6 +91,10 @@ public class Aluno {
         return creditosAcumulados;
     }
 
+    public void setCargaHorariaMax(int cargaHorariaMax){
+        this.cargaHorariaMax = cargaHorariaMax;
+    }
+
     public void setCreditoMax(int i) {
         creditoMax = i;
     }

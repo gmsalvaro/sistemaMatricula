@@ -1,4 +1,5 @@
 package modelo;
+import validadores.ValidadorCoRequisito;
 import validadores.ValidadorPreRequisito;
 
 import java.util.ArrayList;
@@ -17,7 +18,6 @@ public abstract class Disciplina {
         this.nome = nome;
         this.cargaHoraria = cargaHoraria;
         this.credito = numCredito;
-        this.coRequisitos = new ArrayList<>();
     }
 
     public abstract int getPrecedencia();
@@ -55,4 +55,5 @@ public abstract class Disciplina {
     }
 
     public int getCredito(){ return credito; }
+
 }
