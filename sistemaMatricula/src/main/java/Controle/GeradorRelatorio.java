@@ -3,6 +3,8 @@ package Controle;
 import modelo.Aluno;
 import modelo.Turma;
 
+import java.util.List;
+
 public class GeradorRelatorio {
 
     public GeradorRelatorio(){}
@@ -14,7 +16,7 @@ public class GeradorRelatorio {
         sb.append("-----------------------------------------------------------------------------------------------------\n");
 
         int cargaHorariaAceitaTotal = 0;
-        java.util.List<Turma> turmasAceitas = aluno.getPlanejamentoFuturo();
+        List<Turma> turmasAceitas = aluno.getPlanejamentoFuturo();
 
         sb.append("Disciplinas Aceitas no Planejamento:\n");
         if (turmasAceitas.isEmpty()) {

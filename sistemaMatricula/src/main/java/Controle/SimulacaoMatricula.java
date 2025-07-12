@@ -12,19 +12,19 @@ import validadores.ValidadorSimples;
 
 public class SimulacaoMatricula {
 
-    public static void main(String[] args) throws excecoes.CoRequisitoNaoAtendidoException, excecoes.PreRequisitoNaoCumpridoException, excecoes.TurmaCheiaException, excecoes.ConflitoDeHorarioException, excecoes.CargaHorariaExcedidaException {
+    public static void main(String[] args) throws excecoes.CoRequisitoNaoAtendidoException, excecoes.PreRequisitoNaoCumpridoException, excecoes.TurmaCheiaException, excecoes.ConflitoDeHorarioException, excecoes.CargaHorariaExcedidaException, excecoes.CreditosInsuficienteException {
         System.out.println("--- Iniciando Simulação de Matrícula ---");
 
         // 1. Criar Disciplinas
-        Disciplina prog1 = new DisciplinaObrigatoria("DCC001", "Programação I", 60);
-        Disciplina labProg1 = new DisciplinaObrigatoria("DCC002", "Laboratório de Programação I", 30);
-        Disciplina calc1 = new DisciplinaObrigatoria("MAT001", "Cálculo I", 60);
-        Disciplina algebra = new DisciplinaObrigatoria("MAT002", "Álgebra Linear", 60);
-        Disciplina fisica = new DisciplinaObrigatoria("FIS001", "Física Geral", 60);
-        Disciplina estruturaDados = new DisciplinaObrigatoria("DCC003", "Estruturas de Dados", 60);
-        Disciplina bancoDados = new DisciplinaObrigatoria("DCC004", "Banco de Dados", 60);
-        Disciplina redes = new DisciplinaEletiva("RED001", "Redes de Computadores", 60); // Eletiva, precedência 2
-        Disciplina etica = new DisciplinaObrigatoria("HUM001", "Ética", 30); // Precedência 1
+        Disciplina prog1 = new DisciplinaObrigatoria("DCC001", "Programação I", 60, 2);
+        Disciplina labProg1 = new DisciplinaObrigatoria("DCC002", "Laboratório de Programação I", 30, 2);
+        Disciplina calc1 = new DisciplinaObrigatoria("MAT001", "Cálculo I", 60,2);
+        Disciplina algebra = new DisciplinaObrigatoria("MAT002", "Álgebra Linear", 60, 2);
+        Disciplina fisica = new DisciplinaObrigatoria("FIS001", "Física Geral", 60, 2);
+        Disciplina estruturaDados = new DisciplinaObrigatoria("DCC003", "Estruturas de Dados", 60, 2);
+        Disciplina bancoDados = new DisciplinaObrigatoria("DCC004", "Banco de Dados", 60, 2);
+        Disciplina redes = new DisciplinaEletiva("RED001", "Redes de Computadores", 60, 2); // Eletiva, precedência 2
+        Disciplina etica = new DisciplinaObrigatoria("HUM001", "Ética", 30, 2); // Precedência 1
 
         // 2. Definir Pré-requisitos e Co-requisitos
         // Estruturas de Dados: Agora só exige Programação I APROVADA

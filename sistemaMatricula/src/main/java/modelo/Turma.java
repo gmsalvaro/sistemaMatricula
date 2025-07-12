@@ -1,7 +1,6 @@
 package modelo;
 import modelo.Disciplina;
 import modelo.Aluno;
-
 import java.util.ArrayList;
 import java.util.List;
 

@@ -8,13 +8,15 @@ public abstract class Disciplina {
     protected String nome;
     protected String codigo;
     protected int cargaHoraria;
+    protected int numCredito;
     protected List< Disciplina > coRequisitos;
-    protected ValidadorPreRequisito preRequisito; // Apenas uma condição
+    protected ValidadorPreRequisito preRequisito;
 
-    public Disciplina(String  codigo, String nome, int cargaHoraria){
+    public Disciplina(String  codigo, String nome, int cargaHoraria, int numCredito){
         this.codigo = codigo;
         this.nome = nome;
         this.cargaHoraria = cargaHoraria;
+        this.numCredito = numCredito;
         this.coRequisitos = new ArrayList<>();
     }
 
@@ -23,10 +25,14 @@ public abstract class Disciplina {
     public String getCodigo(){
         return codigo;
     }
+
     public int getCargaHoraria() {
         return this.cargaHoraria;
     }
 
+    public int getNumCredito(){
+        return numCredito;
+    }
     public String getNome(){
         return nome;
     }
@@ -51,4 +57,5 @@ public abstract class Disciplina {
             return preRequisito;
     }
 
+    public int getCredito(){ return numCredito; }
 }

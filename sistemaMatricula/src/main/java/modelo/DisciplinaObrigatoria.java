@@ -8,8 +8,8 @@ public class DisciplinaObrigatoria extends Disciplina {
     protected String codigo;
     protected int cargaHoraria;
 
-    public DisciplinaObrigatoria(String nome, String codigo, int cargaHoraria){
-        super(nome, codigo, cargaHoraria);
+    public DisciplinaObrigatoria(String nome, String codigo, int cargaHoraria, int numCredito){
+        super(nome, codigo, cargaHoraria, numCredito);
     }
     @Override
     public int getPrecedencia(){
