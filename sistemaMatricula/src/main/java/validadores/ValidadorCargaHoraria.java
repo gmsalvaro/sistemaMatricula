@@ -1,6 +1,6 @@
 package validadores;
-import  modelo.Aluno;
-import  modelo.Disciplina;
+import modelo.Aluno;
+import modelo.Disciplina;
 
 
 public class ValidadorCargaHoraria {
@@ -15,7 +15,7 @@ public class ValidadorCargaHoraria {
         public boolean validarCargaHoraria() {
             int cargaHorariaAtual = aluno.getCargaHorariaAtualNoPlanejamento();
             int novaCargaHorariaTotal = cargaHorariaAtual + disciplina.getCargaHoraria();
-            if (novaCargaHorariaTotal > aluno.getCargaHorariaM())
+            if (novaCargaHorariaTotal > aluno.getCargaHoraria())
                 return false;
             return true;
         }

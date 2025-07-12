@@ -8,7 +8,7 @@ public abstract class Disciplina {
     protected String nome;
     protected String codigo;
     protected int cargaHoraria;
-    protected int numCredito;
+    protected int credito;
     protected List< Disciplina > coRequisitos;
     protected ValidadorPreRequisito preRequisito;
 
@@ -16,7 +16,7 @@ public abstract class Disciplina {
         this.codigo = codigo;
         this.nome = nome;
         this.cargaHoraria = cargaHoraria;
-        this.numCredito = numCredito;
+        this.credito = numCredito;
         this.coRequisitos = new ArrayList<>();
     }
 
@@ -30,9 +30,6 @@ public abstract class Disciplina {
         return this.cargaHoraria;
     }
 
-    public int getNumCredito(){
-        return numCredito;
-    }
     public String getNome(){
         return nome;
     }
@@ -57,5 +54,5 @@ public abstract class Disciplina {
             return preRequisito;
     }
 
-    public int getCredito(){ return numCredito; }
+    public int getCredito(){ return credito; }
 }

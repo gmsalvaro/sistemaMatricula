@@ -1,4 +1,4 @@
-package Controle;
+package controll;
 
 import excecoes.ConflitoDeHorarioException;
 import modelo.Aluno;

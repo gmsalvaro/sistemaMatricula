@@ -1,9 +1,6 @@
 package modelo;
-import modelo.Disciplina;
 
-import java.util.List;
-
-public class DisciplinaObrigatoria extends Disciplina {
+public class DisciplinaObrigatoria extends modelo.Disciplina {
     protected String nome;
     protected String codigo;
     protected int cargaHoraria;

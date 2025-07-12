@@ -1,7 +1,6 @@
 package modelo;
-import modelo.Disciplina;
 
-public class DisciplinaEletiva extends Disciplina{
+public class DisciplinaEletiva extends modelo.Disciplina {
     protected String nome;
     protected String codigo;
     int numCredito;

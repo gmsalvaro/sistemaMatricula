@@ -1,25 +1,24 @@
 package modelo;
-
+import modelo.Disciplina;
+import modelo.Turma;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import modelo.Disciplina;
-import modelo.Turma;
 
 public class Aluno {
     protected String nome;
     protected String matricula;
     protected int cargaHorariaMax;
-    protected int numCredito = 0;
     protected int creditoMax = 0;
     protected Map<Disciplina, Double> disciplinasCursadas;
     protected List<Turma> planejamentoFuturo;
 
-    public Aluno(String nome, String matricula, int creditoMax) {
+    public Aluno(String nome, String matricula, int creditoMax, int cargaHorariaMax) {
         this.nome = nome;
         this.matricula = matricula;
         this.creditoMax = creditoMax;
+        this.cargaHorariaMax = cargaHorariaMax;
         this.disciplinasCursadas = new HashMap<>();
         this.planejamentoFuturo = new ArrayList<>();
     }
@@ -74,7 +73,7 @@ public class Aluno {
         return cargaHorariaAtual;
     }
 
-    public int getCargaHorariaM(){
+    public int getCargaHoraria(){
         return cargaHorariaMax;
     }
 
@@ -86,10 +85,13 @@ public class Aluno {
         int creditosAcumulados = 0;
         for (Map.Entry<Disciplina, Double> d : disciplinasCursadas.entrySet()) {
             if (d.getValue() >= 60.0) {
-                creditosAcumulados += d.getKey().getNumCredito();
+                creditosAcumulados += d.getKey().getCredito();
             }
         }
         return creditosAcumulados;
     }
 
+    public void setCreditoMax(int i) {
+        creditoMax = i;
+    }
 }

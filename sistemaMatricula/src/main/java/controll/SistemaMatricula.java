@@ -1,11 +1,10 @@
-package Controle;
-
-import Controle.GeradorRelatorio;
-import Controle.ResolveConflitoHorario;
+package controll;
+import controll.ResolveConflitoHorario;
+import controll.GeradorRelatorio;
 import excecoes.CargaHorariaExcedidaException;
 import excecoes.CoRequisitoNaoAtendidoException;
 import excecoes.ConflitoDeHorarioException;
-import excecoes.MatriculaException;
+import excecoes.CreditosInsuficienteException;
 import excecoes.PreRequisitoNaoCumpridoException;
 import excecoes.TurmaCheiaException;
 import validadores.ValidadorCreditos;
@@ -15,6 +14,8 @@ import modelo.Aluno;
 import modelo.Disciplina;
 import modelo.Turma;
 import validadores.ValidadorPreRequisito;
+
+import java.util.List;
 
 public class SistemaMatricula {
     private ResolveConflitoHorario resolveConflitoHorario;
@@ -27,14 +28,14 @@ public class SistemaMatricula {
 
     public String tentarMatricularDisciplina(Aluno aluno, Turma turmaDesejada)
             throws PreRequisitoNaoCumpridoException, CoRequisitoNaoAtendidoException,
-            TurmaCheiaException, ConflitoDeHorarioException, CargaHorariaExcedidaException, excecoes.CreditosInsuficienteException {
+            TurmaCheiaException, ConflitoDeHorarioException, CargaHorariaExcedidaException, CreditosInsuficienteException {
 
         Disciplina disciplinaAtual = turmaDesejada.getDisciplina();
         validarVagas(turmaDesejada, disciplinaAtual);
         validarPreRequisito(aluno, disciplinaAtual);
         validarCargaHoraria(aluno, disciplinaAtual);
-        validarCreditosMaximos(aluno, disciplinaAtual);
-        validarCoRequisitos(aluno,disciplinaAtual);
+        //validarCreditosMaximos(aluno, disciplinaAtual);
+        validarCoRequisitos(aluno, disciplinaAtual.getCoRequisitos());
         resolveConflitoHorario.resolverConflitoHorario(aluno, turmaDesejada, disciplinaAtual);
         aluno.adicionarTurmaAoPlanejamento(turmaDesejada);
         turmaDesejada.matricularAluno();
@@ -48,11 +49,11 @@ public class SistemaMatricula {
         }
     }
 
-    private void validarCoRequisitos(Aluno aluno, Disciplina disciplina) throws CoRequisitoNaoAtendidoException {
+    private void validarCoRequisitos(Aluno aluno, List<Disciplina> disciplina) throws CoRequisitoNaoAtendidoException {
             ValidadorCoRequisito validadorCoRequisito = new ValidadorCoRequisito(aluno, disciplina);
         if(!validadorCoRequisito.validarCoRequisitos()){
             throw new CoRequisitoNaoAtendidoException(
-                    "Co-requisito '" + disciplina.getNome() + "' de '" + disciplina.getNome() + "' não presente no planejamento atual do aluno."
+                    "Co-requisito   de  não presente no planejamento atual do aluno."
             );
 
         }
@@ -71,13 +72,12 @@ public class SistemaMatricula {
         ValidadorCargaHoraria validadorCargaHoraria = new ValidadorCargaHoraria(aluno, disciplina);
         if (!validadorCargaHoraria.validarCargaHoraria()) {
             throw new CargaHorariaExcedidaException(
-                    "Carga horária máxima (" + aluno.getCargaHorariaM() + "h) excedida ao adicionar '" + disciplina.getNome() + "'.");
+                    "Carga horária máxima (" + aluno.getCargaHoraria() + "h) excedida ao adicionar '" + disciplina.getNome() + "'.");
         }
     }
 
     private void validarCreditosMaximos(Aluno aluno, Disciplina disciplina) throws excecoes.CreditosInsuficienteException {
         ValidadorCreditos validador = new ValidadorCreditos(aluno, disciplina);
-
         if (!validador.verificarQtdCredito(aluno, disciplina)) {
             throw new excecoes.CreditosInsuficienteException(
                     "Créditos máximos (" + aluno.getCreditoMax() + " créditos) excedidos ao adicionar '" + disciplina.getNome() + "'.");

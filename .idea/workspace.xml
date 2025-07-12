@@ -4,22 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a81c581d-1242-48a9-98b4-fa3c9baf1b4f" name="Changes" comment="Configura JDK-Correção codigo e começo Test">
-      <change afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/CreditosInsuficienteException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCargaHoraria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCoRequisito.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCreditos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a81c581d-1242-48a9-98b4-fa3c9baf1b4f" name="Changes" comment="Ajustabndo Sistema e Validadores">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/Controle/GeradorRelatorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/Controle/GeradorRelatorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/Controle/SistemaMatricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/Controle/SistemaMatricula.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/Controle/GeradorRelatorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/GeradorRelatorio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/Controle/ResolveConflitoHorario.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/ResolveConflitoHorario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/Controle/SimulacaoMatricula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/Controle/SistemaMatricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/SistemaMatricula.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Aluno.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Disciplina.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaEletiva.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaEletiva.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaObrigatoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaObrigatoria.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaOptativa.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/DisciplinaOptativa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Turma.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Turma.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorAND.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorAND.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCargaHoraria.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCargaHoraria.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCoRequisito.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCoRequisito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCreditos.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCreditos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorOR.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorPreRequisito.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorPreRequisito.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorSimples.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorSimples.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,11 +106,11 @@
   </component>
   <component name="RunManager" selected="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina">
     <configuration name="SimulacaoMatricula" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Controle.SimulacaoMatricula" />
+      <option name="MAIN_CLASS_NAME" value="controll.SimulacaoMatricula" />
       <module name="sistemaMatricula" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controle.*" />
+          <option name="PATTERN" value="controll.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -180,11 +183,21 @@
       <option name="project" value="LOCAL" />
       <updated>1752042302043</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Criando classes para Validadores">
+      <option name="closed" value="true" />
+      <created>1752290244712</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752290244712</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Configura JDK-Correção codigo e começo Test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configura JDK-Correção codigo e começo Test" />
+    <MESSAGE value="Criando classes para Validadores" />
+    <MESSAGE value="Ajustabndo Sistema e Validadores" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajustabndo Sistema e Validadores" />
   </component>
 </project>
