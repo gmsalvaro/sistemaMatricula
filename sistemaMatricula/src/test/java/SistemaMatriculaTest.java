@@ -1,10 +1,9 @@
 import controll.SistemaMatricula;
-import excecoes.CargaHorariaExcedidaException;
-import excecoes.CoRequisitoNaoAtendidoException;
-import excecoes.ConflitoDeHorarioException;
-import excecoes.CreditosInsuficienteException;
-import excecoes.PreRequisitoNaoCumpridoException;
-import excecoes.TurmaCheiaException;
+import excecoes.*;
+import modelo.Aluno;
+import modelo.Disciplina;
+import modelo.DisciplinaObrigatoria;
+import modelo.Turma;
 import validadores.ValidadorAND;
 import validadores.ValidadorOR;
 import validadores.ValidadorCargaHoraria;
@@ -15,10 +14,6 @@ import validadores.ValidadorAND;
 import validadores.ValidadorPreRequisito;
 
 import validadores.ValidadorPreRequisito;
-import modelo.Aluno;
-import modelo.Disciplina;
-import modelo.DisciplinaObrigatoria; // Supondo que você usa essa classe
-import modelo.Turma;
 import org.junit.jupiter.api.BeforeEach; // Importar BeforeEach
 import org.junit.jupiter.api.Test;
 import validadores.*;
@@ -50,6 +45,7 @@ class SistemaMatriculaTest {
     private Disciplina bancoDados;
     private Disciplina calc1;
     private Disciplina fisica;
+    private Disciplina fisica2;
 
     // Turmas
     private Turma turmaProg1;
@@ -59,15 +55,16 @@ class SistemaMatriculaTest {
     private Turma turmaBancoDados;
     private Turma turmaCalc1;
     private Turma turmaFisica;
+    private Turma turmaFisica2;
 
 
-    @BeforeEach // Este método será executado antes de CADA teste
+    @BeforeEach
+        // Este método será executado antes de CADA teste
     void setup() {
         sistema = new SistemaMatricula();
 
         // Inicialização do aluno padrão com limites razoáveis para os testes
         alunoPadrao = new Aluno("Alice", "2023001", 24, 180); // Ex: 120 créditos máx, 240h carga horária máx
-
 
         // Inicialização das Disciplinas (código, nome, cargaHoraria, créditos)
         prog1 = new DisciplinaObrigatoria("DCC001", "Programação I", 60, 4);
@@ -77,6 +74,8 @@ class SistemaMatriculaTest {
         bancoDados = new DisciplinaObrigatoria("DCC004", "Banco de Dados", 60, 4);
         calc1 = new DisciplinaObrigatoria("MAT002", "Cálculo I", 60, 4);
         fisica = new DisciplinaObrigatoria("FIS001", "Física Geral", 60, 4);
+        fisica2 = new modelo.DisciplinaEletiva("ELE001", "Temas Especiais", 60, 4);
+
 
         // Inicialização das Turmas (nome da turma, disciplina, capacidade, horario)
         // Ajustei capacidades para facilitar testes de turma cheia e horários para conflito
@@ -87,6 +86,7 @@ class SistemaMatriculaTest {
         turmaBancoDados = new Turma("T1-BD", bancoDados, 30, "Seg 14h-16h");
         turmaCalc1 = new Turma("T1-C1", calc1, 30, "Ter/Qui 08h-10h");
         turmaFisica = new Turma("T1-F1", fisica, 30, "Ter/Qui 10h-12h"); // Conflita com Algebra
+        turmaFisica2 = new Turma("T1-F2", fisica2, 30, "Ter/Sex 08h-10h");
     }
 
     // --- Testes de Sucesso ---
@@ -133,8 +133,8 @@ class SistemaMatriculaTest {
     @Test
     void tentarMatricularDisciplina_PreRequisitoANDNaoCumprido() {
         // Cenário: Banco de Dados exige Prog1 E LabProg1. Aluno só tem Prog1.
-         List<validadores.ValidadorPreRequisito> validadores = new ArrayList<>();
-         ValidadorAND validadorAND = new ValidadorAND(prog1,labProg1);
+        List<validadores.ValidadorPreRequisito> validadores = new ArrayList<>();
+        ValidadorAND validadorAND = new ValidadorAND(prog1, labProg1);
         bancoDados.setValidadorPreRequisito(validadorAND);
         alunoPadrao.adicionarDisciplinaCursada(prog1, 75.0); // Cursou só Prog I
 
@@ -144,18 +144,6 @@ class SistemaMatriculaTest {
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaBancoDados));
     }
 
-//    void tentarMatricularDisciplina_PreRequisitoORNaoCumprido() {
-//        // Cenário: Estruturas de Dados exige Prog1 OU Algebra. Aluno não tem nenhuma.
-//        estruturaDados.setValidadorPreRequisito(new ValidadorOR(
-//                new ValidadorSimples(prog1),
-//                new ValidadorSimples(algebra)
-//        ));
-//
-//        assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
-//            sistema.tentarMatriculaDisciplina(alunoPadrao, turmaEstruturaDados);
-//        });
-//        assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaEstruturaDados));
-//    }
 
     @Test
     void tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente() {
@@ -245,4 +233,21 @@ class SistemaMatriculaTest {
         });
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaAuxCreditos));
     }
+
+    @Test
+    void tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva() {
+
+        alunoPadrao.adicionarTurmaAoPlanejamento(turmaFisica2);
+
+        assertDoesNotThrow(() -> {
+            String resultado = sistema.tentarMatricularDisciplina(alunoPadrao, turmaCalc1);
+            assertEquals("ACEITA: Matrícula em 'Cálculo I' realizada com sucesso.", resultado);
+        });
+
+        // Verificações: Eletiva removida, Prog1 adicionada
+        assertTrue(alunoPadrao.getPlanejamentoFuturo().contains(turmaCalc1));
+        assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaFisica2));
+    }
+
 }
+

@@ -35,13 +35,21 @@ public class SistemaMatricula {
             throws MatriculaException {
 
         Disciplina disciplinaAtual = turmaDesejada.getDisciplina();
+
+
         validarVagas(turmaDesejada, disciplinaAtual);
         validarPreRequisito(aluno, disciplinaAtual);
+
+        validarCargaHoraria(aluno, disciplinaAtual);
+        validarCoRequisitos(aluno, disciplinaAtual.getCoRequisitos());
         validadorCargaHoraria.validarCargaHoraria(aluno, disciplinaAtual);
         validadorCoRequisito.validarCoRequisitos(aluno, disciplinaAtual);
+
         resolveConflitoHorario.resolverConflitoHorario(aluno, turmaDesejada, disciplinaAtual);
-        aluno.adicionarTurmaAoPlanejamento(turmaDesejada);
+
         turmaDesejada.matricularAluno();
+        aluno.adicionarTurmaAoPlanejamento(turmaDesejada);
+
         return "ACEITA: Matrícula em '" + disciplinaAtual.getNome() + "' realizada com sucesso.";
     }
 

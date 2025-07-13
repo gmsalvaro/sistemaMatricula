@@ -23,10 +23,10 @@ public class ResolveConflitoHorario {
             int precedenciaNova = disciplinaAtual.getPrecedencia();
             int precedenciaExistente = discConflitante.getPrecedencia();
 
-            if (precedenciaNova < precedenciaExistente) {
+            if (precedenciaNova > precedenciaExistente) {
                 aluno.removerTurmaDoPlanejamento(turmaComConflitoExistente);
                 turmaComConflitoExistente.desmatricularAluno();
-            } else if (precedenciaNova > precedenciaExistente) {
+            } else if (precedenciaNova < precedenciaExistente) {
                 throw new ConflitoDeHorarioException(
                         "Conflito de horário com '" + discConflitante.getNome() + "' (maior prioridade). '" + disciplinaAtual.getNome() + "' rejeitada."
                 );

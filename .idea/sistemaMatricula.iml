@@ -8,7 +8,6 @@
       <sourceFolder url="file://$MODULE_DIR$/sistemaMatricula/src/main" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sistemaMatricula/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sistemaMatricula/src/main/java/Controle" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/sistemaMatricula/src/main/java/excecoes" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sistemaMatricula/src/main/java/modelo" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sistemaMatricula/src/main/java/servico" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/sistemaMatricula/src/main/java/validadores" isTestSource="false" />
