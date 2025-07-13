@@ -1,14 +1,13 @@
-import controll.*;
+import service.*;
 import excecoes.*;
-import modelo.*;
+import model.*;
 import validadores.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.util.List;
 import java.util.ArrayList;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -16,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SistemaMatriculaTest {
-    private SistemaMatricula sistema;
+    private ServiceSistemaMatricula sistema;
 
     private Aluno alunoPadrao;
     private Disciplina prog1;
@@ -44,7 +43,7 @@ class SistemaMatriculaTest {
 
     @BeforeEach
     void setup() {
-        sistema = new SistemaMatricula();
+        sistema = new ServiceSistemaMatricula();
 
         alunoPadrao = new Aluno("Alice", "2023001", 24, 180);
 
@@ -70,8 +69,6 @@ class SistemaMatriculaTest {
         turmaIngIns = new Turma ("T1-II", inglesIns, 15, "Ter/Qui 08h-10h");
         turmaCircLogic = new Turma ("T1-CL", circLogic, 20, "Qui 10h-12h");
     }
-
-    // --- Testes de Sucesso ---
 
     @Test
     void tentarMatricularDisciplina_SucessoComPreRequisito() throws Exception {
@@ -205,7 +202,6 @@ class SistemaMatriculaTest {
         assertTrue(alunoPadrao.getPlanejamentoFuturo().contains(turmaFisica2));
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaIngIns));
     }
-
 
     @Test
     void tentarMatricularDisciplina_MesmaPrecedencia() {

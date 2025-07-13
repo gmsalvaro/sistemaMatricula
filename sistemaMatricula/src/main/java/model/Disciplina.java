@@ -1,4 +1,4 @@
-package modelo;
+package model;
 import validadores.*;
 
 import java.util.ArrayList;
@@ -12,11 +12,11 @@ public abstract class Disciplina {
     protected List< Disciplina > coRequisitos;
     protected ValidadorPreRequisito preRequisito;
 
-    public Disciplina(String  codigo, String nome, int cargaHoraria, int numCredito){
+    public Disciplina(String  codigo, String nome, int cargaHoraria, int credito){
         this.codigo = codigo;
         this.nome = nome;
         this.cargaHoraria = cargaHoraria;
-        this.credito = numCredito;
+        this.credito = credito;
         coRequisitos = new ArrayList<>();
     }
 

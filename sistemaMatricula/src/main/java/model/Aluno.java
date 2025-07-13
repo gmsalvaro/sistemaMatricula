@@ -1,4 +1,4 @@
-package modelo;
+package model;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,6 +9,7 @@ public class Aluno {
     protected String nome;
     protected String matricula;
     protected int cargaHorariaMax;
+    protected int cargaHorariaAcumulada = 0;
     protected int creditoAcumulado = 0;
     protected Map<Disciplina, Double> disciplinasCursadas;
     protected List<Turma> planejamentoFuturo;
@@ -52,35 +53,27 @@ public class Aluno {
     public void adicionarTurmaAoPlanejamento(Turma turma) {
         if (turma != null && !this.planejamentoFuturo.contains(turma)) {
             this.planejamentoFuturo.add(turma);
+            cargaHorariaAcumulada += turma.getDisciplina().cargaHoraria;
         }
     }
 
     public void removerTurmaDoPlanejamento(Turma turma) {
         if (turma != null) {
             this.planejamentoFuturo.remove(turma);
+            cargaHorariaAcumulada -= turma.getDisciplina().cargaHoraria;
         }
     }
-        public int getCargaHorariaAtualNoPlanejamento() { // Novo método
-        int cargaHorariaAtual = 0;
-        for (Turma turma : planejamentoFuturo) {
-            cargaHorariaAtual += turma.getDisciplina().getCargaHoraria(); // Soma carga horária
-        }
-        return cargaHorariaAtual;
-    }
-
-    public int getCargaHoraria(){
-        return cargaHorariaMax;
+    public int getCargaHorariaAtualNoPlanejamento() { // Novo método
+//        int cargaHorariaAtual = 0;
+//        for (Turma turma : planejamentoFuturo) {
+//            cargaHorariaAtual += turma.getDisciplina().getCargaHoraria(); // Soma carga horária
+//        }
+//        return cargaHorariaAtual;
+        return cargaHorariaAcumulada;
     }
 
     public int getCreditosAcumulados() {
         return creditoAcumulado;
     }
 
-    public void setCargaHorariaMax(int cargaHorariaMax){
-        this.cargaHorariaMax = cargaHorariaMax;
-    }
-
-    public void setPlanejamentoFuturo(List<Turma> turmasAceitas) {
-        planejamentoFuturo = turmasAceitas;
-    }
 }

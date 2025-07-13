@@ -1,11 +1,10 @@
-package controll;
-import modelo.*;
+package service;
+import model.*;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class GeradorRelatorio {
-    public GeradorRelatorio(){}
+public class ServiceGeradorRelatorio {
     public String gerarRelatorioFinalAluno(Aluno aluno, HashMap<Disciplina, String> disciplinasRejeitadas) {
         StringBuilder sb = new StringBuilder();
         sb.append("--- Relatório Final de Matrícula para: ").append(aluno.getNome()).append(" (Matrícula: ").append(aluno.getMatricula()).append(") ---\n");

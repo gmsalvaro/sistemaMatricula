@@ -1,4 +1,4 @@
-package modelo;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +11,10 @@ public class Turma {
     private String horario;
     protected List<Aluno> alunosTurma;
 
-    public Turma(String id, Disciplina disciplina, int capacidadeMaxima, String horario) {
+    public Turma(String id, Disciplina disciplina, int capacidadeMax, String horario) {
         this.id = id;
         this.disciplina = disciplina;
-        this.capacidadeMax = capacidadeMaxima;
+        this.capacidadeMax = capacidadeMax;
         this.horario = horario;
         this.numMatriculados = 0;
         this.alunosTurma = new ArrayList<>();
@@ -32,15 +32,13 @@ public class Turma {
         return capacidadeMax;
     }
 
-    public int getNumMatriculados() {
-        return numMatriculados;
-    }
+    public int getNumMatriculados() { return numMatriculados; }
 
     public String getHorario() {
         return horario;
     }
 
-    public boolean isCheia() {
+    public boolean verificaCheio() {
         return numMatriculados >= capacidadeMax;
     }
 
