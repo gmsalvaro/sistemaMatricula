@@ -19,7 +19,7 @@ class GeradorRelatorioTest {
     void setup() {
         geradorRelatorio = new GeradorRelatorio();
 
-        alunoTeste = new Aluno("Roberto Carlos", "2024003", 40, 250);
+        alunoTeste = new Aluno("Roberto Carlos", "2024003", 250);
 
         introProg = new DisciplinaObrigatoria("INP001", "Introdução à Programação", 60, 4);
         calculo2 = new DisciplinaObrigatoria("MAT002", "Cálculo II", 90, 4);

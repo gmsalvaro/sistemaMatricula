@@ -14,7 +14,7 @@ public class Aluno {
     protected Map<Disciplina, Double> historicoAluno;
     protected List<Turma> planejamentoFuturo;
 
-    public Aluno(String nome, String matricula, int creditoMax, int cargaHorariaMax) {
+    public Aluno(String nome, String matricula, int cargaHorariaMax) {
         this.nome = nome;
         this.matricula = matricula;
         this.cargaHorariaMax = cargaHorariaMax;

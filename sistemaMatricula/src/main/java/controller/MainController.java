@@ -10,7 +10,7 @@ public class MainController {
         SistemaMatricula sistema = new SistemaMatricula();
         HashMap<Disciplina, String> turmasRejeitadas = new HashMap<>();
 
-        Aluno aluno = new Aluno("Roberto Carlos", "2024003", 40, 250);
+        Aluno aluno = new Aluno("Roberto Carlos", "2024003", 250);
 
         Disciplina introProg = new DisciplinaObrigatoria("INP001","Introdução à Programação", 60, 4);
         Disciplina calculo2 = new DisciplinaObrigatoria("MAT002", "Cálculo II", 90, 4);

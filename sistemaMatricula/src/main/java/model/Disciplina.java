@@ -1,5 +1,6 @@
 package model;
-import validadores.*;
+
+import validadores.ValidadorPreRequisito; // Importa a interface do validador
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,15 +10,18 @@ public abstract class Disciplina {
     protected String codigo;
     protected int cargaHoraria;
     protected int credito;
-    protected List< Disciplina > coRequisitos;
-    protected ValidadorPreRequisito preRequisito;
+    protected List<Disciplina> coRequisitos;
+    // Alterado de um único ValidadorPreRequisito para uma lista
+    protected List<ValidadorPreRequisito> preRequisitosValidadores;
 
-    public Disciplina(String  codigo, String nome, int cargaHoraria, int credito){
+    public Disciplina(String codigo, String nome, int cargaHoraria, int credito){
         this.codigo = codigo;
         this.nome = nome;
         this.cargaHoraria = cargaHoraria;
         this.credito = credito;
-        coRequisitos = new ArrayList<>();
+        this.coRequisitos = new ArrayList<>(); // Inicializa a lista de co-requisitos
+        // Inicializa a lista de validadores de pré-requisito
+        this.preRequisitosValidadores = new ArrayList<>();
     }
 
     public abstract int getPrecedencia();
@@ -34,22 +38,26 @@ public abstract class Disciplina {
         return nome;
     }
 
+    public int getCredito(){
+        return credito;
+    }
+
     public List<Disciplina> getCoRequisitos() {
         return coRequisitos;
     }
-
-    public void setCoRequisito(Disciplina coRequisito) {
-        this.coRequisitos.add(coRequisito);
+    public List<ValidadorPreRequisito> getPreRequisitosValidadores() {
+        return preRequisitosValidadores;
     }
 
-    public void setValidadorPreRequisito(ValidadorPreRequisito validador) {
-        this.preRequisito = validador;
+    public void adicionarCoRequisito(Disciplina coRequisito) { // Renomeado para clareza
+        if (coRequisito != null) {
+            this.coRequisitos.add(coRequisito);
+        }
     }
 
-    public ValidadorPreRequisito getValidadorPreRequisito(){
-            return preRequisito;
+    public void adicionarPreRequisitoValidador(ValidadorPreRequisito validador) {
+        if (validador != null) {
+            this.preRequisitosValidadores.add(validador);
+        }
     }
-
-    public int getCredito(){ return credito; }
-
 }

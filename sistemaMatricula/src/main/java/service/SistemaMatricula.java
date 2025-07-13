@@ -5,6 +5,7 @@ import model.*;
 import validadores.*;
 
 import java.util.HashMap;
+import java.util.List;
 
 public class SistemaMatricula {
     private ResolveConflitoHorario resolveConflitoHorario;
@@ -21,13 +22,26 @@ public class SistemaMatricula {
     }
 
     public String tentarMatricularDisciplina(Aluno aluno, Turma turmaDesejada)
-            throws MatriculaException {
+            throws MatriculaException { // A exceção pode ser mais específica aqui
         Disciplina disciplinaAtual = turmaDesejada.getDisciplina();
+
+        // 1. Validação de Vagas
         validarVagas(turmaDesejada, disciplinaAtual, turmasRejeitadas);
-        validarPreRequisito(aluno, disciplinaAtual, turmasRejeitadas);
+
+        // 2. Validação de Pré-Requisito
+        validarPreRequisito(aluno, disciplinaAtual, turmasRejeitadas); // Este método chamará os validadores
+
+        // 3. Validação de Carga Horária
         validadorCargaHoraria.validarCargaHoraria(aluno, disciplinaAtual, turmasRejeitadas);
+
+        // 4. Validação de Co-Requisitos
         validadorCoRequisito.validarCoRequisitos(aluno, disciplinaAtual, turmasRejeitadas);
+
+        // 5. Resolução de Conflito de Horário
+        // A lógica aqui deve lançar ConflitoHorarioException com uma mensagem clara
         resolveConflitoHorario.resolverConflitoHorario(aluno, turmaDesejada, disciplinaAtual, turmasRejeitadas);
+
+        // Se tudo passou, matricular o aluno
         turmaDesejada.matricularAluno();
         aluno.adicionarTurmaAoPlanejamento(turmaDesejada);
         return "ACEITA: Matrícula em '" + disciplinaAtual.getNome() + "' realizada com sucesso.";
@@ -35,19 +49,26 @@ public class SistemaMatricula {
 
     private void validarVagas(Turma turma, Disciplina disciplina, HashMap<Disciplina, String> turmasRejeitadas) throws TurmaCheiaException {
         if (turma.verificaCheio()) {
-            turmasRejeitadas.put(disciplina,"Turma " + turma.getId() + " (" + disciplina.getNome() + ") está cheia.");
-            throw new TurmaCheiaException("Turma " + turma.getId() + " (" + disciplina.getNome() + ") está cheia.");
+            String mensagem = "Turma cheia.";
+            turmasRejeitadas.put(disciplina, mensagem);
+            throw new TurmaCheiaException(mensagem);
         }
     }
 
     private void validarPreRequisito(Aluno aluno, Disciplina disciplina, HashMap<Disciplina, String> turmasRejeitadas) throws ValidacaoMatriculaException {
-        ValidadorPreRequisito validador = disciplina.getValidadorPreRequisito();
-        if (validador != null) {
-            validador.verificarValidador(aluno, disciplina, turmasRejeitadas);
+        List<ValidadorPreRequisito> validadores = disciplina.getPreRequisitosValidadores();
+        if (!validadores.isEmpty()) {
+            for(ValidadorPreRequisito validadorPreRequisito : validadores) {
+                validadorPreRequisito.verificarValidador(aluno, disciplina, turmasRejeitadas);
+            }
         }
     }
 
     public String gerarRelatorioFinalAluno(Aluno aluno) {
         return geradorRelatorio.gerarRelatorioFinalAluno(aluno, turmasRejeitadas);
+    }
+
+    public void resetTurmasRejeitadas() {
+        this.turmasRejeitadas.clear();
     }
 }
