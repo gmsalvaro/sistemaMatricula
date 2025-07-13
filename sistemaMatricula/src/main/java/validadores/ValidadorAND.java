@@ -1,59 +1,53 @@
 package validadores;
+
 import modelo.Disciplina;
 import modelo.Aluno;
-import java.util.Arrays;
-import java.util.List;
+import excecoes.ValidacaoMatriculaException;
+import excecoes.PreRequisitoNaoCumpridoException;
 import java.util.Map;
 
 public class ValidadorAND implements validadores.ValidadorPreRequisito {
-    Disciplina preRequisito1;
-    Disciplina preRequisito2;
-    private String mensagemErro;
+    private Disciplina preRequisito1;
+    private Disciplina preRequisito2;
 
-    public ValidadorAND(Disciplina preRequisito1,Disciplina preRequisito2) { // Varargs para facilitar a criação
+    public ValidadorAND(Disciplina preRequisito1, Disciplina preRequisito2) {
         this.preRequisito1 = preRequisito1;
         this.preRequisito2 = preRequisito2;
     }
 
     @Override
-    public boolean verificarValidador(Aluno aluno) {
+    public void verificarValidador(Aluno aluno, Disciplina disciplinaAlvo) throws ValidacaoMatriculaException {
+        if (aluno == null || preRequisito1 == null || preRequisito2 == null) {
+            throw new ValidacaoMatriculaException("Erro interno: Aluno ou pré-requisitos nulos para validação AND.");
+        }
+
         Map<Disciplina, Double> disciplinasCursadasMap = aluno.getDisciplinasCursadas();
-        boolean cumpriuPreRequisito1 = false ;
-        boolean cumpriuPreRequisito2 = false;
-        for (modelo.Disciplina disciplinaCursada : disciplinasCursadasMap.keySet()) {
-            if (disciplinaCursada.equals(preRequisito1)) {
-                cumpriuPreRequisito1 = true;
-            }
-            if (disciplinaCursada.equals(preRequisito2)) {
+        boolean cumpriuPreRequisito1ComNota = false;
+        boolean cumpriuPreRequisito2ComNota = false;
 
-                cumpriuPreRequisito2 = true;
-            }
-            if (cumpriuPreRequisito1 && cumpriuPreRequisito2) {
-                break;
-            }
+        if (disciplinasCursadasMap.containsKey(preRequisito1) &&
+                disciplinasCursadasMap.get(preRequisito1) >= 60.0) {
+            cumpriuPreRequisito1ComNota = true;
         }
 
-        if (cumpriuPreRequisito1 && cumpriuPreRequisito2) {
-            return true;
-        } else {
-            // Constrói a mensagem de erro detalhada
-            StringBuilder sb = new StringBuilder("Pré-requisito(s) não cumprido(s): ");
-            if (!cumpriuPreRequisito1) {
-                sb.append(preRequisito1.getNome());
-            }
-            if (!cumpriuPreRequisito2) {
-                if (!cumpriuPreRequisito1) {
-                    sb.append(" e ");
-                }
-                sb.append(preRequisito2.getNome());
-            }
-            this.mensagemErro = sb.toString();
-            return false;
+        if (disciplinasCursadasMap.containsKey(preRequisito2) &&
+                disciplinasCursadasMap.get(preRequisito2) >= 60.0) {
+            cumpriuPreRequisito2ComNota = true;
         }
-    }
 
-    @Override
-    public String getMensagemErro() {
-        return mensagemErro;
+        if (!(cumpriuPreRequisito1ComNota && cumpriuPreRequisito2ComNota)) {
+            String message = "Para se matricular em '" + disciplinaAlvo.getNome() + "', o aluno deve ter cursado E APROVADO em ambas as disciplinas '";
+            message += preRequisito1.getNome() + "' E '" + preRequisito2.getNome() + "'.";
+
+            if (!cumpriuPreRequisito1ComNota && !cumpriuPreRequisito2ComNota) {
+                message += " Nenhuma das duas disciplinas foi atendida.";
+            } else if (!cumpriuPreRequisito1ComNota) {
+                message += " A disciplina '" + preRequisito1.getNome() + "' não foi atendida.";
+            } else {
+                message += " A disciplina '" + preRequisito2.getNome() + "' não foi atendida.";
+            }
+
+            throw new PreRequisitoNaoCumpridoException(message);
+        }
     }
 }

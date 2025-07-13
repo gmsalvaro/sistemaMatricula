@@ -1,10 +1,13 @@
 package controll;
+
+import excecoes.MatriculaException;
+import excecoes.ValidacaoMatriculaException;
 import excecoes.CargaHorariaExcedidaException;
 import excecoes.CoRequisitoNaoAtendidoException;
 import excecoes.ConflitoDeHorarioException;
-import excecoes.CreditosInsuficienteException;
 import excecoes.PreRequisitoNaoCumpridoException;
 import excecoes.TurmaCheiaException;
+import excecoes.CreditosInsuficienteException;
 import validadores.ValidadorCoRequisito;
 import validadores.ValidadorCargaHoraria;
 import modelo.Aluno;
@@ -18,23 +21,29 @@ public class SistemaMatricula {
     private ResolveConflitoHorario resolveConflitoHorario;
     private GeradorRelatorio geradorRelatorio;
 
+    private ValidadorCargaHoraria validadorCargaHoraria;
+    private ValidadorCoRequisito validadorCoRequisito;
+
     public SistemaMatricula() {
         this.resolveConflitoHorario = new ResolveConflitoHorario();
         this.geradorRelatorio = new GeradorRelatorio();
+        this.validadorCargaHoraria = new ValidadorCargaHoraria();
+        this.validadorCoRequisito = new ValidadorCoRequisito();
     }
 
     public String tentarMatricularDisciplina(Aluno aluno, Turma turmaDesejada)
-            throws PreRequisitoNaoCumpridoException, CoRequisitoNaoAtendidoException,
-            TurmaCheiaException, ConflitoDeHorarioException, CargaHorariaExcedidaException, CreditosInsuficienteException {
+            throws MatriculaException {
 
         Disciplina disciplinaAtual = turmaDesejada.getDisciplina();
 
 
         validarVagas(turmaDesejada, disciplinaAtual);
         validarPreRequisito(aluno, disciplinaAtual);
+
         validarCargaHoraria(aluno, disciplinaAtual);
         validarCoRequisitos(aluno, disciplinaAtual.getCoRequisitos());
-
+        validadorCargaHoraria.validarCargaHoraria(aluno, disciplinaAtual);
+        validadorCoRequisito.validarCoRequisitos(aluno, disciplinaAtual);
 
         resolveConflitoHorario.resolverConflitoHorario(aluno, turmaDesejada, disciplinaAtual);
 
@@ -42,7 +51,6 @@ public class SistemaMatricula {
         aluno.adicionarTurmaAoPlanejamento(turmaDesejada);
 
         return "ACEITA: Matrícula em '" + disciplinaAtual.getNome() + "' realizada com sucesso.";
-
     }
 
     private void validarVagas(Turma turma, Disciplina disciplina) throws TurmaCheiaException {
@@ -51,34 +59,10 @@ public class SistemaMatricula {
         }
     }
 
-    private void validarCoRequisitos(Aluno aluno, List<Disciplina> disciplina) throws CoRequisitoNaoAtendidoException {
-            ValidadorCoRequisito validadorCoRequisito = new ValidadorCoRequisito(aluno, disciplina);
-        if(!validadorCoRequisito.validarCoRequisitos()){
-            throw new CoRequisitoNaoAtendidoException(
-                    "Co-requisito   de  não presente no planejamento atual do aluno."
-            );
-
-        }
-    }
-
-    private void validarPreRequisito(Aluno aluno, Disciplina disciplina) throws PreRequisitoNaoCumpridoException {
+    private void validarPreRequisito(Aluno aluno, Disciplina disciplina) throws ValidacaoMatriculaException {
         ValidadorPreRequisito validador = disciplina.getValidadorPreRequisito();
         if (validador != null) {
-            if (!validador.verificarValidador(aluno)) {
-                throw new PreRequisitoNaoCumpridoException(validador.getMensagemErro());
-            }
-        }
-    }
-    public void validarCreditosMin(Aluno aluno, Disciplina disciplina) throws CreditosInsuficienteException{
-        throw new CreditosInsuficienteException("dsdasd");
-    }
-
-
-    private void validarCargaHoraria(Aluno aluno, Disciplina disciplina) throws CargaHorariaExcedidaException {
-        ValidadorCargaHoraria validadorCargaHoraria = new ValidadorCargaHoraria(aluno, disciplina);
-        if (!validadorCargaHoraria.validarCargaHoraria()) {
-            throw new CargaHorariaExcedidaException(
-                    "Carga horária máxima (" + aluno.getCargaHoraria() + "h) excedida ao adicionar '" + disciplina.getNome() + "'.");
+            validador.verificarValidador(aluno, disciplina);
         }
     }
 

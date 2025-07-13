@@ -1,22 +1,24 @@
 package validadores;
+
 import modelo.Aluno;
 import modelo.Disciplina;
+import excecoes.ValidacaoMatriculaException;
+import excecoes.CargaHorariaExcedidaException;
 
+public class ValidadorCargaHoraria  {
 
-public class ValidadorCargaHoraria {
-        Aluno aluno;
-        Disciplina disciplina;
-
-        public ValidadorCargaHoraria( Aluno aluno, Disciplina disciplina ){
-            this.aluno = aluno;
-            this.disciplina = disciplina;
-
+    public void validarCargaHoraria(Aluno aluno, Disciplina disciplina) throws CargaHorariaExcedidaException {
+        if (aluno == null || disciplina == null) {
+            throw new CargaHorariaExcedidaException("Erro interno: Aluno ou disciplina nulo para validação de carga horária.");
         }
-        public boolean validarCargaHoraria() {
-            int cargaHorariaAtual = aluno.getCargaHorariaAtualNoPlanejamento();
-            int novaCargaHorariaTotal = cargaHorariaAtual + disciplina.getCargaHoraria();
-            if (novaCargaHorariaTotal > aluno.getCargaHoraria())
-                return false;
-            return true;
+        int cargaHorariaAtual = aluno.getCargaHorariaAtualNoPlanejamento();
+        int novaCargaHorariaTotal = cargaHorariaAtual + disciplina.getCargaHoraria();
+        if (novaCargaHorariaTotal > aluno.getCargaHorariaMax()) {
+            throw new CargaHorariaExcedidaException(
+                    "Carga horária máxima excedida para o aluno '" + aluno.getNome() + "' ao tentar adicionar '" + disciplina.getNome() + "'. " +
+                            "Carga atual: " + cargaHorariaAtual + ", Carga da disciplina: " + disciplina.getCargaHoraria() +
+                            ", Limite: " + aluno.getCargaHorariaMax() + "."
+            );
         }
+    }
 }
