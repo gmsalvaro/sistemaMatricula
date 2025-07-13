@@ -1,16 +1,16 @@
 package controll;
 
-import excecoes.ConflitoDeHorarioException;
-import modelo.Aluno;
-import modelo.Disciplina;
-import modelo.Turma;
+import excecoes.*;
+import modelo.*;
 
 public class ResolveConflitoHorario {
 
    public ResolveConflitoHorario(){}
 
     public void resolverConflitoHorario(Aluno aluno, Turma turmaAtual, Disciplina disciplinaAtual) throws ConflitoDeHorarioException {
-        Turma turmaComConflitoExistente = null;
+
+       //Confere Conflito
+       Turma turmaComConflitoExistente = null;
         for (Turma aceitaAnteriormente : aluno.getPlanejamentoFuturo()) {
             if (aceitaAnteriormente.getHorario().equals(turmaAtual.getHorario())) {
                 turmaComConflitoExistente = aceitaAnteriormente;
@@ -18,6 +18,7 @@ public class ResolveConflitoHorario {
             }
         }
 
+        //Trabalha Relacionada ao conflito!!
         if (turmaComConflitoExistente != null) {
             Disciplina discConflitante = turmaComConflitoExistente.getDisciplina();
             int precedenciaNova = disciplinaAtual.getPrecedencia();
@@ -31,13 +32,14 @@ public class ResolveConflitoHorario {
                         "Conflito de horário com '" + discConflitante.getNome() + "' (maior prioridade). '" + disciplinaAtual.getNome() + "' rejeitada."
                 );
             } else {
-                aluno.removerTurmaDoPlanejamento(turmaComConflitoExistente);
-                turmaComConflitoExistente.desmatricularAluno();
+               // aluno.removerTurmaDoPlanejamento(turmaComConflitoExistente);
+               // turmaComConflitoExistente.desmatricularAluno();
                 throw new ConflitoDeHorarioException(
                         "Conflito de horário irresolúvel entre '" + disciplinaAtual.getNome() + "' e '" + discConflitante.getNome() + "' (mesma prioridade)."
                 );
             }
         }
+
     }
 
 }

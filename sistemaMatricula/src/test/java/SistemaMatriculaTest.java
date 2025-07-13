@@ -1,26 +1,13 @@
 import controll.SistemaMatricula;
 import excecoes.*;
-import modelo.Aluno;
-import modelo.Disciplina;
-import modelo.DisciplinaObrigatoria;
-import modelo.Turma;
-import validadores.ValidadorAND;
-import validadores.ValidadorOR;
-import validadores.ValidadorCargaHoraria;
-import validadores.ValidadorCoRequisito;
-import validadores.ValidadorCoRequisito;
-import validadores.ValidadorSimples;
-import validadores.ValidadorAND;
-import validadores.ValidadorPreRequisito;
+import modelo.*;
+import validadores.*;
 
 import validadores.ValidadorPreRequisito;
 import org.junit.jupiter.api.BeforeEach; // Importar BeforeEach
 import org.junit.jupiter.api.Test;
-import validadores.*;
-import validadores.ValidadorAND;
-import validadores.ValidadorCoRequisito;
-import validadores.ValidadorOR;
-import validadores.ValidadorSimples;
+
+
 
 import java.util.Arrays; // Para Arrays.asList
 import java.util.List;
@@ -46,6 +33,8 @@ class SistemaMatriculaTest {
     private Disciplina calc1;
     private Disciplina fisica;
     private Disciplina fisica2;
+    private Disciplina engSoft;
+    private Disciplina inglesIns;
 
     // Turmas
     private Turma turmaProg1;
@@ -56,6 +45,8 @@ class SistemaMatriculaTest {
     private Turma turmaCalc1;
     private Turma turmaFisica;
     private Turma turmaFisica2;
+    private Turma turmaIngIns;
+    private Turma turmaEngSoft;
 
 
     @BeforeEach
@@ -73,20 +64,23 @@ class SistemaMatriculaTest {
         algebra = new DisciplinaObrigatoria("MAT001", "Álgebra Linear", 60, 4);
         bancoDados = new DisciplinaObrigatoria("DCC004", "Banco de Dados", 60, 4);
         calc1 = new DisciplinaObrigatoria("MAT002", "Cálculo I", 60, 4);
-        fisica = new DisciplinaObrigatoria("FIS001", "Física Geral", 60, 4);
-        fisica2 = new modelo.DisciplinaEletiva("ELE001", "Temas Especiais", 60, 4);
+        fisica = new DisciplinaObrigatoria("FIS001", "Física 1", 60, 4);
+        fisica2 = new DisciplinaEletiva("FIS002", "Fisica 2", 60, 4);
+        inglesIns = new DisciplinaOptativa("ENG101", "Ingles Instrumental", 45, 4 );
+
 
 
         // Inicialização das Turmas (nome da turma, disciplina, capacidade, horario)
         // Ajustei capacidades para facilitar testes de turma cheia e horários para conflito
         turmaProg1 = new Turma("T1-P1", prog1, 2, "Seg/Qua 08h-10h"); // Capacidade 2 para teste de cheia
-        turmaLabProg1 = new Turma("T1-LP1", labProg1, 30, "Seg/Qua 08h-10h"); // Mesmo horário da Prog1 para conflito
+        turmaLabProg1 = new Turma("T1-LP1", labProg1, 30, "Seg/Qua 10h-12h"); // Mesmo horário da Prog1 para conflito
         turmaEstruturaDados = new Turma("T1-ED", estruturaDados, 30, "Sex 08h-12h");
         turmaAlgebra = new Turma("T1-AL", algebra, 30, "Ter/Qui 10h-12h");
         turmaBancoDados = new Turma("T1-BD", bancoDados, 30, "Seg 14h-16h");
         turmaCalc1 = new Turma("T1-C1", calc1, 30, "Ter/Qui 08h-10h");
         turmaFisica = new Turma("T1-F1", fisica, 30, "Ter/Qui 10h-12h"); // Conflita com Algebra
-        turmaFisica2 = new Turma("T1-F2", fisica2, 30, "Ter/Sex 08h-10h");
+        turmaFisica2 = new Turma("T1-F2", fisica2, 30, "Ter/Qui 08h-10h");
+        turmaIngIns = new Turma ("T1-II", inglesIns, 15, "Ter/Qui 08h-10h");
     }
 
     // --- Testes de Sucesso ---
@@ -189,14 +183,13 @@ class SistemaMatriculaTest {
 
     @Test
     void tentarMatricularDisciplina_ConflitoDeHorarioException() {
-        // Cenário: Aluno já matriculado em Lab Prog I (Seg/Qua 08h-10h).
-        // Tenta matricular em Prog I (também Seg/Qua 08h-10h).
-        alunoPadrao.adicionarTurmaAoPlanejamento(turmaLabProg1);
+
+        alunoPadrao.adicionarTurmaAoPlanejamento(turmaFisica);
 
         assertThrows(ConflitoDeHorarioException.class, () -> {
-            sistema.tentarMatricularDisciplina(alunoPadrao, turmaProg1);
+            sistema.tentarMatricularDisciplina(alunoPadrao, turmaAlgebra);
         });
-        assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaProg1));
+        assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaAlgebra));
     }
 
     @Test
@@ -244,9 +237,41 @@ class SistemaMatriculaTest {
             assertEquals("ACEITA: Matrícula em 'Cálculo I' realizada com sucesso.", resultado);
         });
 
-        // Verificações: Eletiva removida, Prog1 adicionada
+
         assertTrue(alunoPadrao.getPlanejamentoFuturo().contains(turmaCalc1));
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaFisica2));
+    }
+
+
+    @Test
+    void tentarMatricularDisciplina_EletivaPorOptativa() {
+
+        alunoPadrao.adicionarTurmaAoPlanejamento(turmaIngIns);
+
+        assertDoesNotThrow(() -> {
+            String resultado = sistema.tentarMatricularDisciplina(alunoPadrao, turmaFisica2);
+            assertEquals("ACEITA: Matrícula em 'Fisica 2' realizada com sucesso.", resultado);
+        });
+
+
+        assertTrue(alunoPadrao.getPlanejamentoFuturo().contains(turmaFisica2));
+        assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaIngIns));
+    }
+
+
+
+
+    @Test
+    void tentarMatricularDisciplina_MesmaPrecedencia() {
+
+        alunoPadrao.adicionarTurmaAoPlanejamento(turmaAlgebra);
+
+        assertThrows(ConflitoDeHorarioException.class, () -> {
+            sistema.tentarMatricularDisciplina(alunoPadrao, turmaFisica); // Ter/Qui 10h-12h
+        });
+
+        assertTrue(alunoPadrao.getPlanejamentoFuturo().contains(turmaAlgebra));
+        assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaFisica));
     }
 
 }

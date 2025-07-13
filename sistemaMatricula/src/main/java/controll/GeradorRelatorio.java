@@ -1,8 +1,6 @@
 package controll;
 
-import modelo.Aluno;
-import modelo.Disciplina;
-import modelo.Turma;
+import modelo.*;
 
 import java.util.List;
 

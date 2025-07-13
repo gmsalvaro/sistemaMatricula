@@ -1,9 +1,7 @@
 package validadores;
 
-import modelo.Aluno;
-import excecoes.ValidacaoMatriculaException;
-import excecoes.PreRequisitoNaoCumpridoException;
-import modelo.Disciplina;
+import excecoes.*;
+import modelo.*;
 
 public class ValidadorSimples implements validadores.ValidadorPreRequisito {
     private Disciplina preRequisito;

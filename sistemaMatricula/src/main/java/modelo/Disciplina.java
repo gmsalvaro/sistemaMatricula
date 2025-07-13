@@ -1,6 +1,5 @@
 package modelo;
-import validadores.ValidadorCoRequisito;
-import validadores.ValidadorPreRequisito;
+import validadores.*;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,7 +1,7 @@
 package validadores;
-import modelo.Aluno;
-import modelo.Disciplina;
-import excecoes.ValidacaoMatriculaException;
+
+import excecoes.*;
+import modelo.*;
 
 public interface ValidadorPreRequisito {
     void verificarValidador(Aluno aluno, Disciplina disciplinaAlvo) throws ValidacaoMatriculaException;

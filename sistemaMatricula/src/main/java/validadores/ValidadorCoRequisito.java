@@ -1,11 +1,7 @@
 package validadores;
 
-import modelo.Aluno;
-import modelo.Disciplina;
-import modelo.Turma;
-import excecoes.ValidacaoMatriculaException;
-import excecoes.CoRequisitoNaoAtendidoException;
-
+import excecoes.*;
+import modelo.*;
 import java.util.List;
 
 public class ValidadorCoRequisito  {
