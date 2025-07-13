@@ -1,12 +1,10 @@
 import model.*;
-import service.GeradorRelatorio;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
+import service.*;
 import java.util.HashMap;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 class GeradorRelatorioTest {
 
@@ -37,7 +35,7 @@ class GeradorRelatorioTest {
     // --- Testes de Cenários ---
 
     @Test
-    void testGerarRelatorio_AlunoComDisciplinasAceitasERejeitadas() {
+    void testGerarRelatorio_AlunoComDisciplinasAceitasRejeitadas() {
 
         alunoTeste.adicionarTurmaAoPlanejamento(turmaIntroProg);
         alunoTeste.adicionarTurmaAoPlanejamento(turmaGraficos);
@@ -70,7 +68,6 @@ class GeradorRelatorioTest {
 
     @Test
     void testGerarRelatorio_AlunoSemDisciplinasAceitas() {
-        // Nenhuma disciplina adicionada ao planejamento do aluno
         HashMap<Disciplina, String> disciplinasRejeitadas = new HashMap<>();
         disciplinasRejeitadas.put(introProg, "Pré-requisito não cumprido."); // Usando as novas disciplinas
 
@@ -92,7 +89,7 @@ class GeradorRelatorioTest {
 
     @Test
     void testGerarRelatorio_AlunoSemDisciplinasRejeitadas() {
-        // Simular matrículas aceitas no planejamento do aluno
+
         alunoTeste.adicionarTurmaAoPlanejamento(turmaIntroProg);
         alunoTeste.adicionarTurmaAoPlanejamento(turmaCalculo2); // Usando as novas turmas
 
@@ -118,7 +115,6 @@ class GeradorRelatorioTest {
 
     @Test
     void testGerarRelatorio_AlunoSemDisciplinasAceitasNemRejeitadas() {
-        // Ambos os mapas vazios
         HashMap<Disciplina, String> disciplinasRejeitadas = new HashMap<>();
 
         String relatorioGerado = geradorRelatorio.gerarRelatorioFinalAluno(alunoTeste, disciplinasRejeitadas);

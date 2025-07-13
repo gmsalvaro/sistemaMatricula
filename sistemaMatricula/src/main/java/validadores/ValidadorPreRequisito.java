@@ -2,7 +2,6 @@ package validadores;
 
 import excecoes.*;
 import model.*;
-
 import java.util.HashMap;
 
 public interface ValidadorPreRequisito {

@@ -3,7 +3,6 @@ package service;
 import excecoes.*;
 import model.*;
 import validadores.*;
-
 import java.util.HashMap;
 import java.util.List;
 
@@ -22,26 +21,19 @@ public class SistemaMatricula {
     }
 
     public String tentarMatricularDisciplina(Aluno aluno, Turma turmaDesejada)
-            throws MatriculaException { // A exceção pode ser mais específica aqui
+            throws MatriculaException {
         Disciplina disciplinaAtual = turmaDesejada.getDisciplina();
 
-        // 1. Validação de Vagas
+
         validarVagas(turmaDesejada, disciplinaAtual, turmasRejeitadas);
+        validarPreRequisito(aluno, disciplinaAtual, turmasRejeitadas);
 
-        // 2. Validação de Pré-Requisito
-        validarPreRequisito(aluno, disciplinaAtual, turmasRejeitadas); // Este método chamará os validadores
-
-        // 3. Validação de Carga Horária
         validadorCargaHoraria.validarCargaHoraria(aluno, disciplinaAtual, turmasRejeitadas);
 
-        // 4. Validação de Co-Requisitos
         validadorCoRequisito.validarCoRequisitos(aluno, disciplinaAtual, turmasRejeitadas);
 
-        // 5. Resolução de Conflito de Horário
-        // A lógica aqui deve lançar ConflitoHorarioException com uma mensagem clara
         resolveConflitoHorario.resolverConflitoHorario(aluno, turmaDesejada, disciplinaAtual, turmasRejeitadas);
 
-        // Se tudo passou, matricular o aluno
         turmaDesejada.matricularAluno();
         aluno.adicionarTurmaAoPlanejamento(turmaDesejada);
         return "ACEITA: Matrícula em '" + disciplinaAtual.getNome() + "' realizada com sucesso.";
@@ -62,10 +54,6 @@ public class SistemaMatricula {
                 validadorPreRequisito.verificarValidador(aluno, disciplina, turmasRejeitadas);
             }
         }
-    }
-
-    public String gerarRelatorioFinalAluno(Aluno aluno) {
-        return geradorRelatorio.gerarRelatorioFinalAluno(aluno, turmasRejeitadas);
     }
 
     public void resetTurmasRejeitadas() {

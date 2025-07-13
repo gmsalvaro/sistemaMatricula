@@ -2,7 +2,6 @@ package service;
 
 import excecoes.*;
 import model.*;
-
 import java.util.HashMap;
 
 public class ResolveConflitoHorario {

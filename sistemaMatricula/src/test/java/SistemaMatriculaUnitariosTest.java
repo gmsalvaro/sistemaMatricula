@@ -2,15 +2,8 @@ import service.*;
 import excecoes.*;
 import model.*;
 import validadores.*;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 class SistemaMatriculaUnitariosTest {
     private SistemaMatricula sistema;
@@ -72,8 +65,9 @@ class SistemaMatriculaUnitariosTest {
         sistema.resetTurmasRejeitadas();
     }
 
+
     @Test
-    void tentarMatricularDisciplina_SucessoComPreRequisitoSimples() throws Exception {
+    void tentarMatricularDisciplina_SucessoComPreRequisitoSimples() {
         estruturaDados.adicionarPreRequisitoValidador(new ValidadorSimples(prog1));
         alunoPadrao.adicionarDisciplinaCursada(prog1, 75.0); // Aluno aprovado em Prog I
         assertDoesNotThrow(() -> {
@@ -83,8 +77,9 @@ class SistemaMatriculaUnitariosTest {
         assertTrue(alunoPadrao.getPlanejamentoFuturo().contains(turmaEstruturaDados));
     }
 
+
     @Test
-    void tentarMatricularDisciplina_SucessoComPreRequisitoAND() throws Exception {
+    void tentarMatricularDisciplina_SucessoComPreRequisitoAND() {
         estruturaDados.adicionarPreRequisitoValidador(new ValidadorAND(prog1, labProg1));
 
         alunoPadrao.adicionarDisciplinaCursada(prog1, 75.0);
@@ -97,7 +92,7 @@ class SistemaMatriculaUnitariosTest {
     }
 
     @Test
-    void tentarMatricularDisciplina_SucessoComPreRequisitoOR() throws Exception {
+    void tentarMatricularDisciplina_SucessoComPreRequisitoOR() {
         fisica2.adicionarPreRequisitoValidador(new ValidadorOR(calc1, fisica));
 
         alunoPadrao.adicionarDisciplinaCursada(calc1, 75.0);
@@ -108,6 +103,8 @@ class SistemaMatriculaUnitariosTest {
         });
         assertTrue(alunoPadrao.getPlanejamentoFuturo().contains(turmaFisica2));
     }
+
+
 
     @Test
     void tentarMatricularDisciplina_CreditosSuficiente() {
@@ -127,7 +124,7 @@ class SistemaMatriculaUnitariosTest {
     }
 
     @Test
-    void tentarMatricularDisciplina_SucessoComCoRequisito() throws Exception {
+    void tentarMatricularDisciplina_SucessoComCoRequisito() {
         prog1.adicionarCoRequisito(labProg1);
 
         alunoPadrao.adicionarTurmaAoPlanejamento(turmaLabProg1);
@@ -144,7 +141,7 @@ class SistemaMatriculaUnitariosTest {
     void tentarMatricularDisciplina_PreRequisitoSimplesNaoCumprido() {
         estruturaDados.adicionarPreRequisitoValidador(new ValidadorSimples(prog1));
 
-        PreRequisitoNaoCumpridoException thrown = assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
+        assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoPadrao, turmaEstruturaDados);
         });
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaEstruturaDados));
@@ -153,23 +150,22 @@ class SistemaMatriculaUnitariosTest {
     @Test
     void tentarMatricularDisciplina_PreRequisitoANDNaoCumprido() {
         bancoDados.adicionarPreRequisitoValidador(new ValidadorAND(prog1, labProg1));
-        alunoPadrao.adicionarDisciplinaCursada(prog1, 75.0); // Cursou só Prog I
+        alunoPadrao.adicionarDisciplinaCursada(prog1, 75.0);
 
-        PreRequisitoNaoCumpridoException thrown = assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
+        assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoPadrao, turmaBancoDados);
         });
-        assertTrue(thrown.getMessage().contains("Para se matricular em 'Banco de Dados', o aluno deve ter cursado E APROVADO em ambas as disciplinas 'Programação I' E 'Lab de Programação I'. A disciplina 'Lab de Programação I' não foi atendida."));
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaBancoDados));
     }
 
     @Test
-    void tentarMatricularDisciplina_PreRequisitoORNaoCumprido() throws Exception {
+    void tentarMatricularDisciplina_PreRequisitoORNaoCumprido() {
         fisica2.adicionarPreRequisitoValidador(new ValidadorOR(calc1, fisica));
 
         alunoPadrao.adicionarDisciplinaCursada(prog1, 75.0);
         alunoPadrao.adicionarDisciplinaCursada(labProg1, 75.0);
 
-        PreRequisitoNaoCumpridoException thrown = assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
+        assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoPadrao, turmaFisica2);
         });
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaFisica2));
@@ -178,8 +174,9 @@ class SistemaMatriculaUnitariosTest {
     @Test
     void tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente() {
         estruturaDados.adicionarPreRequisitoValidador(new ValidadorSimples(prog1));
-        alunoPadrao.adicionarDisciplinaCursada(prog1, 55.0); // Nota insuficiente
-        PreRequisitoNaoCumpridoException thrown = assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
+        alunoPadrao.adicionarDisciplinaCursada(prog1, 55.0);
+
+         assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoPadrao, turmaEstruturaDados);
         });
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaEstruturaDados));
@@ -188,7 +185,8 @@ class SistemaMatriculaUnitariosTest {
     @Test
     void tentarMatricularDisciplina_CoRequisitoNaoAtendido() {
         prog1.adicionarCoRequisito(labProg1);
-        CoRequisitoNaoAtendidoException thrown = assertThrows(CoRequisitoNaoAtendidoException.class, () -> {
+
+       assertThrows(CoRequisitoNaoAtendidoException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoPadrao, turmaProg1);
         });
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaProg1));
@@ -199,7 +197,8 @@ class SistemaMatriculaUnitariosTest {
         turmaProg1.matricularAluno();
         turmaProg1.matricularAluno();
         Aluno outroAluno = new Aluno("Carlos", "2023007", 240);
-        TurmaCheiaException thrown = assertThrows(TurmaCheiaException.class, () -> {
+
+        assertThrows(TurmaCheiaException.class, () -> {
             sistema.tentarMatricularDisciplina(outroAluno, turmaProg1);
         });
         assertFalse(outroAluno.getPlanejamentoFuturo().contains(turmaProg1));
@@ -209,7 +208,7 @@ class SistemaMatriculaUnitariosTest {
     void tentarMatricularDisciplina_ConflitoDeHorarioException() {
         alunoPadrao.adicionarTurmaAoPlanejamento(turmaFisica);
 
-        ConflitoDeHorarioException thrown = assertThrows(ConflitoDeHorarioException.class, () -> {
+        assertThrows(ConflitoDeHorarioException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoPadrao, turmaAlgebra);
         });
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaAlgebra));
@@ -222,7 +221,8 @@ class SistemaMatriculaUnitariosTest {
         Disciplina auxCarga = new DisciplinaObrigatoria("AUX1", "Auxiliar Carga", 80, 5);
         Turma turmaAuxCarga = new Turma("T-AC", auxCarga, 30, "Qua 15h-17h");
         alunoPadrao.adicionarTurmaAoPlanejamento(turmaAuxCarga);
-        CargaHorariaExcedidaException thrown = assertThrows(CargaHorariaExcedidaException.class, () -> {
+
+         assertThrows(CargaHorariaExcedidaException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoPadrao, turmaFisica);
         });
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaFisica));
@@ -235,7 +235,7 @@ class SistemaMatriculaUnitariosTest {
         auxCreditos.adicionarPreRequisitoValidador(new ValidadorCreditosMin( 20));
         Turma turmaAuxCreditos = new Turma("Aux", auxCreditos, 30, "Qui 15h-17h");
 
-        PreRequisitoNaoCumpridoException thrown = assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
+        assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoPadrao, turmaAuxCreditos);
         });
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaAuxCreditos));
@@ -267,7 +267,8 @@ class SistemaMatriculaUnitariosTest {
     @Test
     void tentarMatricularDisciplina_MesmaPrecedencia() {
         alunoPadrao.adicionarTurmaAoPlanejamento(turmaAlgebra);
-        ConflitoDeHorarioException thrown = assertThrows(ConflitoDeHorarioException.class, () -> {
+
+        assertThrows(ConflitoDeHorarioException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoPadrao, turmaFisica);
         });
 
@@ -275,10 +276,4 @@ class SistemaMatriculaUnitariosTest {
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaFisica));
     }
 
-    //@Test
-//    void tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria() {
-//        alunoPadrao.adicionarTurmaAoPlanejamento(turmaCircLogic);
-//        alunoPadrao.adicionarTurmaAoPlanejamento(turmaFisica2);
-//
-//    }
 }

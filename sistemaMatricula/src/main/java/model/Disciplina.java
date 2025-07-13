@@ -1,7 +1,7 @@
 package model;
 
-import validadores.ValidadorPreRequisito; // Importa a interface do validador
 
+import validadores.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +11,6 @@ public abstract class Disciplina {
     protected int cargaHoraria;
     protected int credito;
     protected List<Disciplina> coRequisitos;
-    // Alterado de um único ValidadorPreRequisito para uma lista
     protected List<ValidadorPreRequisito> preRequisitosValidadores;
 
     public Disciplina(String codigo, String nome, int cargaHoraria, int credito){
@@ -20,7 +19,6 @@ public abstract class Disciplina {
         this.cargaHoraria = cargaHoraria;
         this.credito = credito;
         this.coRequisitos = new ArrayList<>(); // Inicializa a lista de co-requisitos
-        // Inicializa a lista de validadores de pré-requisito
         this.preRequisitosValidadores = new ArrayList<>();
     }
 
