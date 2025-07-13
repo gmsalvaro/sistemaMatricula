@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a81c581d-1242-48a9-98b4-fa3c9baf1b4f" name="Changes" comment="Ajustes Finais">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTestMultiplos.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaMultiplosTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTestUnitarios.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaUnitariosTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +151,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMatriculaTestMultiplos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SistemaMatriculaMultiplosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemaMatricula" />
       <extension name="coverage">
         <pattern>
@@ -161,25 +160,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="test" />
-      <option name="MAIN_CLASS_NAME" value="test.SistemaMatriculaTestMultiplos" />
+      <option name="MAIN_CLASS_NAME" value="test.SistemaMatriculaMultiplosTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMatriculaTestUnitarios" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SistemaMatriculaUnitariosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemaMatricula" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTestUnitarios" />
+      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaUnitariosTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_PreRequisitoORNaoCumprido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_PreRequisitoORNaoCumprido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemaMatricula" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTestUnitarios" />
+      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaUnitariosTest" />
       <option name="METHOD_NAME" value="tentarMatricularDisciplina_PreRequisitoORNaoCumprido" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -189,10 +188,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.SistemaMatriculaTestUnitarios" />
-        <item itemvalue="JUnit.SistemaMatriculaTestMultiplos" />
+        <item itemvalue="JUnit.SistemaMatriculaUnitariosTest" />
+        <item itemvalue="JUnit.SistemaMatriculaMultiplosTest" />
         <item itemvalue="JUnit.GeradorRelatorioTest" />
-        <item itemvalue="JUnit.SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_PreRequisitoORNaoCumprido" />
+        <item itemvalue="JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_PreRequisitoORNaoCumprido" />
       </list>
     </recent_temporary>
   </component>
@@ -332,7 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752422105270</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Ajustes Finais">
+      <option name="closed" value="true" />
+      <created>1752423840554</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1752423840554</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
