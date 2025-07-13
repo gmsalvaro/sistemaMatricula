@@ -1,15 +1,13 @@
-import controll.SistemaMatricula;
+import controll.*;
 import excecoes.*;
 import modelo.*;
 import validadores.*;
 
-import validadores.ValidadorPreRequisito;
+
 import org.junit.jupiter.api.BeforeEach; // Importar BeforeEach
 import org.junit.jupiter.api.Test;
 
 
-
-import java.util.Arrays; // Para Arrays.asList
 import java.util.List;
 import java.util.ArrayList; // Para ArrayList
 
@@ -33,8 +31,9 @@ class SistemaMatriculaTest {
     private Disciplina calc1;
     private Disciplina fisica;
     private Disciplina fisica2;
-    private Disciplina engSoft;
+    private Disciplina circLogic;
     private Disciplina inglesIns;
+
 
     // Turmas
     private Turma turmaProg1;
@@ -46,7 +45,7 @@ class SistemaMatriculaTest {
     private Turma turmaFisica;
     private Turma turmaFisica2;
     private Turma turmaIngIns;
-    private Turma turmaEngSoft;
+    private Turma turmaCircLogic;
 
 
     @BeforeEach
@@ -67,6 +66,7 @@ class SistemaMatriculaTest {
         fisica = new DisciplinaObrigatoria("FIS001", "Física 1", 60, 4);
         fisica2 = new DisciplinaEletiva("FIS002", "Fisica 2", 60, 4);
         inglesIns = new DisciplinaOptativa("ENG101", "Ingles Instrumental", 45, 4 );
+        circLogic = new DisciplinaEletiva("CEL001", "Circuitos Logicos", 60, 4);
 
 
 
@@ -81,6 +81,7 @@ class SistemaMatriculaTest {
         turmaFisica = new Turma("T1-F1", fisica, 30, "Ter/Qui 10h-12h"); // Conflita com Algebra
         turmaFisica2 = new Turma("T1-F2", fisica2, 30, "Ter/Qui 08h-10h");
         turmaIngIns = new Turma ("T1-II", inglesIns, 15, "Ter/Qui 08h-10h");
+        turmaCircLogic = new Turma ("T1-CL", circLogic, 20, "Qui 10h-12h");
     }
 
     // --- Testes de Sucesso ---
@@ -259,8 +260,6 @@ class SistemaMatriculaTest {
     }
 
 
-
-
     @Test
     void tentarMatricularDisciplina_MesmaPrecedencia() {
 
@@ -272,6 +271,28 @@ class SistemaMatriculaTest {
 
         assertTrue(alunoPadrao.getPlanejamentoFuturo().contains(turmaAlgebra));
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaFisica));
+    }
+
+    @Test
+    void tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria(){
+
+
+        alunoPadrao.adicionarTurmaAoPlanejamento(turmaCircLogic);
+        alunoPadrao.adicionarTurmaAoPlanejamento(turmaFisica2);
+        turmaCircLogic.matricularAluno();
+        turmaFisica2.matricularAluno();
+
+
+        assertDoesNotThrow(() -> {
+            String resultado = sistema.tentarMatricularDisciplina(alunoPadrao, turmaCalc1);
+            assertEquals("ACEITA: Matrícula em 'Cálculo I' realizada com sucesso.", resultado);
+        });
+
+       //Confere se a disciplina de maior precedencia esta no planejamento e tambem confere se a ultima saiu.
+        assertTrue(alunoPadrao.getPlanejamentoFuturo().contains(turmaCalc1));
+        assertTrue(alunoPadrao.getPlanejamentoFuturo().contains(turmaCircLogic));
+        assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaFisica2));
+
     }
 
 }

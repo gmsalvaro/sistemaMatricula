@@ -28,8 +28,6 @@ public class SistemaMatricula {
 
         validarVagas(turmaDesejada, disciplinaAtual);
         validarPreRequisito(aluno, disciplinaAtual);
-
-
         validadorCargaHoraria.validarCargaHoraria(aluno, disciplinaAtual);
         validadorCoRequisito.validarCoRequisitos(aluno, disciplinaAtual);
 
