@@ -7,13 +7,10 @@ import validadores.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SistemaMatriculaMultiplosTest {
+class SistemaMatriculaTestMultiplos {
 
     private SistemaMatricula sistema;
     private Aluno alunoTeste;
@@ -307,7 +304,6 @@ class SistemaMatriculaMultiplosTest {
 
     @Test
     void tentarMatricularDisciplina_CenarioComplexo_FalhaNaCargaHoraria() {
-        // Inteligência Artificial com os mesmos pré-requisitos e co-requisitos do teste de sucesso
         Disciplina ia = new DisciplinaObrigatoria("DCC007", "Inteligência Artificial", 60, 4);
         Turma turmaIA = new Turma("T1-IA", ia, 25, "Ter 14h-16h");
 
@@ -316,8 +312,6 @@ class SistemaMatriculaMultiplosTest {
         ia.adicionarPreRequisitoValidador(new ValidadorCreditosMin(4));
         ia.adicionarCoRequisito(redesComputadores);
 
-
-        // Atender pré-requisitos e créditos
         alunoTeste.adicionarDisciplinaCursada(estruturaDados, 70.0);
         alunoTeste.adicionarDisciplinaCursada(algebra, 80.0);
         alunoTeste.adicionarDisciplinaCursada(prog1, 80.0);
@@ -331,13 +325,13 @@ class SistemaMatriculaMultiplosTest {
         assertFalse(alunoTeste.getPlanejamentoFuturo().contains(turmaIA));
     }
 
-    // --- Seus testes anteriores de ValidadorAND e ValidadorOR simples (opcionalmente movidos para cá se desejar uma classe de "múltiplos" mais completa) ---
-
     @Test
     void tentarMatricularDisciplina_MultiplosPreRequisitosAND_Sucesso() throws Exception {
         bancoDados.adicionarPreRequisitoValidador(new ValidadorAND(prog1, labProg1));
+
         alunoTeste.adicionarDisciplinaCursada(prog1, 70.0);
         alunoTeste.adicionarDisciplinaCursada(labProg1, 85.0);
+
         assertDoesNotThrow(() -> {
             String resultado = sistema.tentarMatricularDisciplina(alunoTeste, turmaBancoDados);
             assertEquals("ACEITA: Matrícula em 'Banco de Dados' realizada com sucesso.", resultado);
@@ -348,7 +342,9 @@ class SistemaMatriculaMultiplosTest {
     @Test
     void tentarMatricularDisciplina_MultiplosPreRequisitosAND_FalhaUmNaoCursado() {
         bancoDados.adicionarPreRequisitoValidador(new ValidadorAND(prog1, labProg1));
+
         alunoTeste.adicionarDisciplinaCursada(prog1, 70.0);
+
         assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoTeste, turmaBancoDados);
         });
@@ -358,8 +354,10 @@ class SistemaMatriculaMultiplosTest {
     @Test
     void tentarMatricularDisciplina_MultiplosPreRequisitosAND_FalhaUmComNotaInsuficiente() {
         bancoDados.adicionarPreRequisitoValidador(new ValidadorAND(prog1, labProg1));
+
         alunoTeste.adicionarDisciplinaCursada(prog1, 70.0);
         alunoTeste.adicionarDisciplinaCursada(labProg1, 59.0);
+
         assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoTeste, turmaBancoDados);
         });
@@ -369,7 +367,9 @@ class SistemaMatriculaMultiplosTest {
     @Test
     void tentarMatricularDisciplina_PreRequisitoOR_SucessoComPrimeiraOpcao() throws Exception {
         topicosAvancados.adicionarPreRequisitoValidador(new ValidadorOR(estruturaDados, algebra));
+
         alunoTeste.adicionarDisciplinaCursada(estruturaDados, 70.0);
+
         assertDoesNotThrow(() -> {
             String resultado = sistema.tentarMatricularDisciplina(alunoTeste, turmaTopicosAvancados);
             assertEquals("ACEITA: Matrícula em 'Tópicos Avançados II' realizada com sucesso.", resultado);
@@ -380,7 +380,9 @@ class SistemaMatriculaMultiplosTest {
     @Test
     void tentarMatricularDisciplina_PreRequisitoOR_SucessoComSegundaOpcao() throws Exception {
         topicosAvancados.adicionarPreRequisitoValidador(new ValidadorOR(estruturaDados, algebra));
+
         alunoTeste.adicionarDisciplinaCursada(algebra, 70.0);
+
         assertDoesNotThrow(() -> {
             String resultado = sistema.tentarMatricularDisciplina(alunoTeste, turmaTopicosAvancados);
             assertEquals("ACEITA: Matrícula em 'Tópicos Avançados II' realizada com sucesso.", resultado);
@@ -391,6 +393,7 @@ class SistemaMatriculaMultiplosTest {
     @Test
     void tentarMatricularDisciplina_PreRequisitoOR_FalhaNenhumaOpcaoCumprida() {
         topicosAvancados.adicionarPreRequisitoValidador(new ValidadorOR(estruturaDados, algebra));
+
         assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoTeste, turmaTopicosAvancados);
         });
@@ -400,7 +403,9 @@ class SistemaMatriculaMultiplosTest {
     @Test
     void tentarMatricularDisciplina_PreRequisitoOR_FalhaOpcaoComNotaInsuficiente() {
         topicosAvancados.adicionarPreRequisitoValidador(new ValidadorOR(estruturaDados, algebra));
+
         alunoTeste.adicionarDisciplinaCursada(estruturaDados, 59.0);
+
         assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoTeste, turmaTopicosAvancados);
         });
@@ -436,7 +441,7 @@ class SistemaMatriculaMultiplosTest {
 
         alunoTeste.adicionarDisciplinaCursada(prog1, 70.0);
         alunoTeste.adicionarDisciplinaCursada(labProg1, 80.0);
-        alunoTeste.adicionarDisciplinaCursada(calc1, 90.0); // Estruturas de Dados não cursada
+        alunoTeste.adicionarDisciplinaCursada(calc1, 90.0);
 
         assertThrows(PreRequisitoNaoCumpridoException.class, () -> {
             sistema.tentarMatricularDisciplina(alunoTeste, turmaCompAvancada);
