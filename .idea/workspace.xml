@@ -5,30 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a81c581d-1242-48a9-98b4-fa3c9baf1b4f" name="Changes" comment="Ajustes Finais">
+      <change afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controller/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controller/MainController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/CargaHorariaExcedidaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/CargaHorariaExcedidaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/CoRequisitoNaoAtendidoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/CoRequisitoNaoAtendidoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/ConflitoDeHorarioException.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/ConflitoDeHorarioException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/CreditosInsuficienteException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/GerenciamentoVagasException.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/GerenciamentoVagasException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/MatriculaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/MatriculaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/PreRequisitoNaoCumpridoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/PreRequisitoNaoCumpridoException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/TurmaCheiaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/TurmaCheiaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/ValidacaoMatriculaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/excecoes/ValidacaoMatriculaException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/model/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/model/Disciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/Main.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/service/ResolveConflitoHorario.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/service/ResolveConflitoHorario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/service/SistemaMatricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/service/SistemaMatricula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorAND.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorAND.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCargaHoraria.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCargaHoraria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCoRequisito.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCoRequisito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCreditosMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCreditosMin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorOR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorPreRequisito.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorPreRequisito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorSimples.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorSimples.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/test/java/GeradorRelatorioTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/test/java/GeradorRelatorioTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaMultiplosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaMultiplosTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaUnitariosTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaUnitariosTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,12 +41,12 @@
     &quot;assignee&quot;: &quot;gmsalvaro&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/gmsalvaro/sistemaMatricula.git",
-    "accountId": "2d6afeac-dff5-41a0-a226-8267e7b37923"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/gmsalvaro/sistemaMatricula.git&quot;,
+    &quot;accountId&quot;: &quot;2d6afeac-dff5-41a0-a226-8267e7b37923&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
     &quot;associatedIndex&quot;: 5
     }</component>
@@ -73,95 +55,95 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.MainController.executor": "Run",
-    "Application.SimulacaoMatricula.executor": "Run",
-    "Application.SimuladorMatricula.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.GeradorRelatorioTest.executor": "Run",
-    "JUnit.GeradorRelatorioTest.testGerarRelatorio_AlunoComDisciplinasAceitasERejeitadas.executor": "Run",
-    "JUnit.ServiceRelatorioTest.executor": "Run",
-    "JUnit.ServiceRelatorioTest.testGerarRelatorio_AlunoComDisciplinasAceitasERejeitadas.executor": "Run",
-    "JUnit.ServiceRelatorioTest.testGerarRelatorio_AlunoSemDisciplinasAceitas.executor": "Run",
-    "JUnit.ServiceRelatorioTest.testGerarRelatorio_AlunoSemDisciplinasAceitasNemRejeitadas.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest (1).executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_AND_ComCargaHorariaExcedida_Falha.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_AND_ComCoRequisitoAtendido_Sucesso.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_AND_ComCoRequisitoNaoAtendido_Falha.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_AND_ComCreditosSuficientes_Sucesso.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_And_e_OR_Falha.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_And_e_OR_Sucesso.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_FalhaNaCargaHoraria.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_FalhaNoCoRequisito.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_SucessoTotal.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_OR_ComCoRequisitoNaoAtendido_Falha.executor": "Run",
-    "JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_VariosTestesComSucesso.executor": "Run",
-    "JUnit.SistemaMatriculaTest (1).executor": "Run",
-    "JUnit.SistemaMatriculaTest.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina (1).executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplinaPre.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CargaHorariaExcedidaException.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoDeHorarioException.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoHorarioENaoPrioridade_Rejeitada.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_EletivaPorOptativa.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_MesmaPrecedencia.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoOR_FalhaNenhumaOpcaoCumprida.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoOR_SucessoComPrimeiraOpcao.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoSimplesNaoCumprido.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComCoRequisito.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComPreRequisito.executor": "Run",
-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException.executor": "Run",
-    "JUnit.SistemaMatriculaTest.testCargaHorariaExcedidaException.executor": "Run",
-    "JUnit.SistemaMatriculaTest.testCoRequisitoNaoAtendido.executor": "Run",
-    "JUnit.SistemaMatriculaTest.testPreRequisitoSimplesNaoCumprido.executor": "Run",
-    "JUnit.SistemaMatriculaTest.testTurmaCheiaException.executor": "Run",
-    "JUnit.SistemaMatriculaTestMultiplos.executor": "Run",
-    "JUnit.SistemaMatriculaTestUnitarios.executor": "Run",
-    "JUnit.SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_CreditosInsuficiente.executor": "Run",
-    "JUnit.SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_CreditosSuficiente.executor": "Run",
-    "JUnit.SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_PreRequisitoORNaoCumprido.executor": "Run",
-    "JUnit.SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_SucessoComPreRequisitoAND.executor": "Run",
-    "JUnit.SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_SucessoComPreRequisitoOR.executor": "Run",
-    "JUnit.SistemaMatriculaUnitariosTest.executor": "Run",
-    "JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido.executor": "Run",
-    "JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_CreditosSuficiente.executor": "Run",
-    "JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido.executor": "Run",
-    "JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente.executor": "Run",
-    "JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_PreRequisitoORNaoCumprido.executor": "Run",
-    "JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_PreRequisitoSimplesNaoCumprido.executor": "Run",
-    "JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_SucessoComPreRequisitoAND.executor": "Run",
-    "JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_SucessoComPreRequisitoOR.executor": "Run",
-    "JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_SucessoComPreRequisitoSimples.executor": "Run",
-    "JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_TurmaCheiaException.executor": "Run",
-    "JUnit.sistemaMatriculaTestMultiplos.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_directory_selection": "C:/Users/Meu/IdeaProjects/sistemaMatricula-Testes/sistemaMatricula/src/test/java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainController.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SimulacaoMatricula.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SimuladorMatricula.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.GeradorRelatorioTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GeradorRelatorioTest.testGerarRelatorio_AlunoComDisciplinasAceitasERejeitadas.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServiceRelatorioTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServiceRelatorioTest.testGerarRelatorio_AlunoComDisciplinasAceitasERejeitadas.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServiceRelatorioTest.testGerarRelatorio_AlunoSemDisciplinasAceitas.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ServiceRelatorioTest.testGerarRelatorio_AlunoSemDisciplinasAceitasNemRejeitadas.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_AND_ComCargaHorariaExcedida_Falha.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_AND_ComCoRequisitoAtendido_Sucesso.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_AND_ComCoRequisitoNaoAtendido_Falha.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_AND_ComCreditosSuficientes_Sucesso.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_And_e_OR_Falha.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_And_e_OR_Sucesso.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_FalhaNaCargaHoraria.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_FalhaNoCoRequisito.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_SucessoTotal.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_OR_ComCoRequisitoNaoAtendido_Falha.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_VariosTestesComSucesso.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplinaPre.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CargaHorariaExcedidaException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoDeHorarioException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoHorarioENaoPrioridade_Rejeitada.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_EletivaPorOptativa.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_MesmaPrecedencia.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoOR_FalhaNenhumaOpcaoCumprida.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoOR_SucessoComPrimeiraOpcao.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoSimplesNaoCumprido.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComCoRequisito.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComPreRequisito.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.testCargaHorariaExcedidaException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.testCoRequisitoNaoAtendido.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.testPreRequisitoSimplesNaoCumprido.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTest.testTurmaCheiaException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTestMultiplos.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTestUnitarios.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_CreditosInsuficiente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_CreditosSuficiente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_PreRequisitoORNaoCumprido.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_SucessoComPreRequisitoAND.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaTestUnitarios.tentarMatricularDisciplina_SucessoComPreRequisitoOR.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaUnitariosTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_CreditosSuficiente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_PreRequisitoORNaoCumprido.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_PreRequisitoSimplesNaoCumprido.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_SucessoComPreRequisitoAND.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_SucessoComPreRequisitoOR.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_SucessoComPreRequisitoSimples.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SistemaMatriculaUnitariosTest.tentarMatricularDisciplina_TurmaCheiaException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.sistemaMatriculaTestMultiplos.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/Meu/IdeaProjects/sistemaMatricula-Testes/sistemaMatricula/src/test/java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -173,7 +155,20 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SistemaMatriculaUnitariosTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controller.Main" />
+      <module name="sistemaMatricula" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GeradorRelatorioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemaMatricula" />
       <option name="PACKAGE_NAME" value="" />
@@ -188,16 +183,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SistemaMatriculaMultiplosTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_And_e_OR_Falha" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sistemaMatricula" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaMultiplosTest" />
-      <option name="METHOD_NAME" value="tentarMatricularDisciplina_CenarioComplexo_And_e_OR_Falha" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -223,11 +208,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SistemaMatriculaUnitariosTest" />
         <item itemvalue="JUnit.SistemaMatriculaMultiplosTest" />
         <item itemvalue="JUnit.GeradorRelatorioTest" />
         <item itemvalue="JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_And_e_OR_Sucesso" />
-        <item itemvalue="JUnit.SistemaMatriculaMultiplosTest.tentarMatricularDisciplina_CenarioComplexo_And_e_OR_Falha" />
       </list>
     </recent_temporary>
   </component>

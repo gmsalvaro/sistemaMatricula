@@ -56,6 +56,10 @@ public class SistemaMatricula {
         }
     }
 
+    public String gerarRelatorioFinalAluno(Aluno aluno) {
+        return geradorRelatorio.gerarRelatorioFinalAluno(aluno, turmasRejeitadas);
+    }
+
     public void resetTurmasRejeitadas() {
         this.turmasRejeitadas.clear();
     }

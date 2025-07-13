@@ -27,7 +27,7 @@ public class ResolveConflitoHorario {
                 turmasRejeitadas.put(disciplinaDesejada, msg);
                 throw new ConflitoDeHorarioException(msg);
             } else {
-                String msg = "Conflito de horário irresolúvel entre '" + disciplinaDesejada.getNome() + "' e '" + disciplinaConflitante.getNome() + "' (mesma prioridade).) ";
+                String msg = "Conflito de horário irresolúvel entre '" + disciplinaDesejada.getNome() + "' e '" + disciplinaConflitante.getNome() + "' (mesma prioridade). ";
                 turmasRejeitadas.put(disciplinaDesejada,msg);
                 throw new ConflitoDeHorarioException(msg);
             }
