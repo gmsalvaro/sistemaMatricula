@@ -1,9 +1,7 @@
 package validadores;
 
-import modelo.Disciplina;
-import modelo.Aluno;
-import excecoes.ValidacaoMatriculaException;
-import excecoes.PreRequisitoNaoCumpridoException;
+import excecoes.*;
+import modelo.*;
 import java.util.Map;
 
 public class ValidadorAND implements validadores.ValidadorPreRequisito {

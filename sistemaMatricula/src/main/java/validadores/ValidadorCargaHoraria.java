@@ -1,9 +1,7 @@
 package validadores;
 
-import modelo.Aluno;
-import modelo.Disciplina;
-import excecoes.ValidacaoMatriculaException;
-import excecoes.CargaHorariaExcedidaException;
+import excecoes.*;
+import modelo.*;
 
 public class ValidadorCargaHoraria  {
 

@@ -1,19 +1,8 @@
 package controll;
 
-import excecoes.MatriculaException;
-import excecoes.ValidacaoMatriculaException;
-import excecoes.CargaHorariaExcedidaException;
-import excecoes.CoRequisitoNaoAtendidoException;
-import excecoes.ConflitoDeHorarioException;
-import excecoes.PreRequisitoNaoCumpridoException;
-import excecoes.TurmaCheiaException;
-import excecoes.CreditosInsuficienteException;
-import validadores.ValidadorCoRequisito;
-import validadores.ValidadorCargaHoraria;
-import modelo.Aluno;
-import modelo.Disciplina;
-import modelo.Turma;
-import validadores.ValidadorPreRequisito;
+import excecoes.*;
+import modelo.*;
+import validadores.*;
 
 import java.util.List;
 
@@ -40,8 +29,7 @@ public class SistemaMatricula {
         validarVagas(turmaDesejada, disciplinaAtual);
         validarPreRequisito(aluno, disciplinaAtual);
 
-        validarCargaHoraria(aluno, disciplinaAtual);
-        validarCoRequisitos(aluno, disciplinaAtual.getCoRequisitos());
+
         validadorCargaHoraria.validarCargaHoraria(aluno, disciplinaAtual);
         validadorCoRequisito.validarCoRequisitos(aluno, disciplinaAtual);
 
