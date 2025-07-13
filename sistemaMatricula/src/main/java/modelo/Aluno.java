@@ -80,4 +80,7 @@ public class Aluno {
         this.cargaHorariaMax = cargaHorariaMax;
     }
 
+    public void setPlanejamentoFuturo(List<Turma> turmasAceitas) {
+        planejamentoFuturo = turmasAceitas;
+    }
 }

@@ -14,31 +14,25 @@ public class GeradorRelatorio {
 
         int cargaHorariaAceitaTotal = 0;
         List<Turma> turmasAceitas = aluno.getPlanejamentoFuturo();
-
-        // Seção de Disciplinas Aceitas
         sb.append("Disciplinas Aceitas no Planejamento:\n");
         if (turmasAceitas == null || turmasAceitas.isEmpty()) {
             sb.append("  Nenhuma disciplina aceita.\n");
         } else {
             for (Turma turma : turmasAceitas) {
-
                 sb.append("  - [ACEITA] ").append(turma.getDisciplina().getNome())
                         .append(" (").append(turma.getDisciplina().getCodigo()).append(")")
                         .append(" - Turma ").append(turma.getId())
-                        .append(" - Horário: ").append(turma.getHorario()) // Adapte se 'getHorario()' não retornar String
+                        .append(" - Horário: ").append(turma.getHorario())
                         .append(" - Carga Horária: ").append(turma.getDisciplina().getCargaHoraria()).append("h\n");
                 cargaHorariaAceitaTotal += turma.getDisciplina().getCargaHoraria();
             }
             sb.append("  Carga Horária Total Aceita: ").append(cargaHorariaAceitaTotal).append("h\n");
         }
         sb.append("-----------------------------------------------------------------------------------------------------\n");
-
-        // Seção de Disciplinas Rejeitadas
         sb.append("Disciplinas Rejeitadas na Simulação:\n");
         if (disciplinasRejeitadas == null || disciplinasRejeitadas.isEmpty()) {
             sb.append("  Nenhuma disciplina rejeitada.\n");
         } else {
-            // Iterando sobre o HashMap<Disciplina, String>
             for (Map.Entry<Disciplina, String> entry : disciplinasRejeitadas.entrySet()) {
                 Disciplina disciplinaRejeitada = entry.getKey();
                 String motivoRejeicao = entry.getValue();
@@ -48,7 +42,6 @@ public class GeradorRelatorio {
             }
         }
         sb.append("-----------------------------------------------------------------------------------------------------\n");
-
         return sb.toString();
     }
 }

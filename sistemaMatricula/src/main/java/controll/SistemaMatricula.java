@@ -24,20 +24,14 @@ public class SistemaMatricula {
 
     public String tentarMatricularDisciplina(Aluno aluno, Turma turmaDesejada)
             throws MatriculaException {
-        HashMap<Disciplina, String> turmasRejeitadas = new HashMap<>();
         Disciplina disciplinaAtual = turmaDesejada.getDisciplina();
-
-
         validarVagas(turmaDesejada, disciplinaAtual, turmasRejeitadas);
         validarPreRequisito(aluno, disciplinaAtual, turmasRejeitadas);
         validadorCargaHoraria.validarCargaHoraria(aluno, disciplinaAtual, turmaDesejada, turmasRejeitadas);
         validadorCoRequisito.validarCoRequisitos(aluno, disciplinaAtual, turmaDesejada, turmasRejeitadas);
-
-        resolveConflitoHorario.resolverConflitoHorario(aluno, turmaDesejada, disciplinaAtual);
-
+        resolveConflitoHorario.resolverConflitoHorario(aluno, turmaDesejada, disciplinaAtual, turmasRejeitadas);
         turmaDesejada.matricularAluno();
         aluno.adicionarTurmaAoPlanejamento(turmaDesejada);
-
         return "ACEITA: Matrícula em '" + disciplinaAtual.getNome() + "' realizada com sucesso.";
     }
 
@@ -55,7 +49,7 @@ public class SistemaMatricula {
         }
     }
 
-    public String gerarRelatorioFinalAluno(Aluno aluno, HashMap<Disciplina, String> turmasRejeitadas) {
+    public String gerarRelatorioFinalAluno(Aluno aluno) {
         return geradorRelatorio.gerarRelatorioFinalAluno(aluno, turmasRejeitadas);
     }
 }
