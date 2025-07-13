@@ -1,31 +1,32 @@
 package validadores;
+
 import modelo.Aluno;
 import modelo.Disciplina;
+import excecoes.ValidacaoMatriculaException;
+import excecoes.PreRequisitoNaoCumpridoException;
 
-public class ValidadorCreditosMin implements validadores.ValidadorPreRequisito { // Renomeado
+
+public class ValidadorCreditosMin implements validadores.ValidadorPreRequisito {
     private int creditosMinimosExigidos;
-    private String mensagemErro;
     private Disciplina disciplinaReferencia;
 
     public ValidadorCreditosMin(Disciplina disciplinaReferencia, int creditosMinimosExigidos) {
         this.disciplinaReferencia = disciplinaReferencia;
         this.creditosMinimosExigidos = creditosMinimosExigidos;
-        this.mensagemErro = "";
     }
 
     @Override
-    public boolean verificarValidador(Aluno aluno) {
-        if (aluno.getCreditosAcumulados() < this.creditosMinimosExigidos) {
-            this.mensagemErro = "O aluno não possui os " + this.creditosMinimosExigidos + " créditos mínimos acumulados para cursar '" +
-                    this.disciplinaReferencia.getNome() + "'. Créditos atuais: " +
-                    aluno.getCreditosAcumulados();
-            return false;
+    public void verificarValidador(Aluno aluno, Disciplina disciplinaAlvo) throws ValidacaoMatriculaException {
+        // Validação inicial para evitar NullPointerException
+        if (aluno == null || disciplinaReferencia == null) {
+            throw new ValidacaoMatriculaException("Erro interno: Aluno ou disciplina de referência nulo para validação de créditos mínimos.");
         }
-        return true;
-    }
 
-    @Override
-    public String getMensagemErro() {
-        return mensagemErro;
+        if (aluno.getCreditosAcumulados() < this.creditosMinimosExigidos) {
+            String mensagem = "O aluno '" + aluno.getNome() + "' não possui os " + this.creditosMinimosExigidos +
+                    " créditos mínimos acumulados para cursar '" + disciplinaReferencia.getNome() + "'. " +
+                    "Créditos atuais: " + aluno.getCreditosAcumulados() + ".";
+            throw new  PreRequisitoNaoCumpridoException(mensagem);
+        }
     }
 }
