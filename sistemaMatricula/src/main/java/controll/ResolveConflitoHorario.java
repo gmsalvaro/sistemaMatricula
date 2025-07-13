@@ -3,11 +3,13 @@ package controll;
 import excecoes.*;
 import modelo.*;
 
+import java.util.HashMap;
+
 public class ResolveConflitoHorario {
 
    public ResolveConflitoHorario(){}
 
-    public void resolverConflitoHorario(Aluno aluno, Turma turmaAtual, Disciplina disciplinaAtual) throws ConflitoDeHorarioException {
+    public void resolverConflitoHorario(Aluno aluno, Turma turmaAtual, Disciplina disciplinaAtual, HashMap<Disciplina, String> turmasRejeitadas ) throws ConflitoDeHorarioException {
 
        //Confere Conflito
        Turma turmaComConflitoExistente = null;
@@ -17,7 +19,6 @@ public class ResolveConflitoHorario {
                 break;
             }
         }
-
         //Trabalha Relacionada ao conflito!!
         if (turmaComConflitoExistente != null) {
             Disciplina discConflitante = turmaComConflitoExistente.getDisciplina();
@@ -28,12 +29,12 @@ public class ResolveConflitoHorario {
                 aluno.removerTurmaDoPlanejamento(turmaComConflitoExistente);
                 turmaComConflitoExistente.desmatricularAluno();
             } else if (precedenciaNova < precedenciaExistente) {
+                turmasRejeitadas.put(disciplinaAtual,"Conflito de horário com '" + discConflitante.getNome() + "' (maior prioridade). '" + disciplinaAtual.getNome() + "' rejeitada." );
                 throw new ConflitoDeHorarioException(
                         "Conflito de horário com '" + discConflitante.getNome() + "' (maior prioridade). '" + disciplinaAtual.getNome() + "' rejeitada."
                 );
             } else {
-               // aluno.removerTurmaDoPlanejamento(turmaComConflitoExistente);
-               // turmaComConflitoExistente.desmatricularAluno();
+                turmasRejeitadas.put(disciplinaAtual,"Conflito de horário irresolúvel entre '" + disciplinaAtual.getNome() + "' e '" + discConflitante.getNome() + "' (mesma prioridade).");
                 throw new ConflitoDeHorarioException(
                         "Conflito de horário irresolúvel entre '" + disciplinaAtual.getNome() + "' e '" + discConflitante.getNome() + "' (mesma prioridade)."
                 );

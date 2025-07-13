@@ -1,0 +1,54 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]" date="1752372182074" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 12/07/2025 23:03 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sistemaMatricula/modelo/Disciplina.class" />
+    <option name="AFTER_PATH" value="out/production/sistemaMatricula/modelo/Disciplina.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]/Disciplina.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sistemaMatricula/controll/GeradorRelatorio.class" />
+    <option name="AFTER_PATH" value="out/production/sistemaMatricula/controll/GeradorRelatorio.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]/GeradorRelatorio.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sistemaMatricula/validadores/ValidadorCoRequisito.class" />
+    <option name="AFTER_PATH" value="out/production/sistemaMatricula/validadores/ValidadorCoRequisito.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]/ValidadorCoRequisito.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sistemaMatricula/validadores/ValidadorAND.class" />
+    <option name="AFTER_PATH" value="out/production/sistemaMatricula/validadores/ValidadorAND.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]/ValidadorAND.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sistemaMatricula/validadores/ValidadorCargaHoraria.class" />
+    <option name="AFTER_PATH" value="out/production/sistemaMatricula/validadores/ValidadorCargaHoraria.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]/ValidadorCargaHoraria.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sistemaMatricula/validadores/ValidadorOR.class" />
+    <option name="AFTER_PATH" value="out/production/sistemaMatricula/validadores/ValidadorOR.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]/ValidadorOR.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sistemaMatricula/modelo/Aluno.class" />
+    <option name="AFTER_PATH" value="out/production/sistemaMatricula/modelo/Aluno.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]/Aluno.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/test/sistemaMatricula/SistemaMatriculaTest.class" />
+    <option name="AFTER_PATH" value="out/test/sistemaMatricula/SistemaMatriculaTest.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]/SistemaMatriculaTest.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sistemaMatricula/modelo/Turma.class" />
+    <option name="AFTER_PATH" value="out/production/sistemaMatricula/modelo/Turma.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]/Turma.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/sistemaMatricula/validadores/ValidadorSimples.class" />
+    <option name="AFTER_PATH" value="out/production/sistemaMatricula/validadores/ValidadorSimples.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_07_2025_23_03_[Changes]/ValidadorSimples.class" />
+  </binary>
+</changelist>

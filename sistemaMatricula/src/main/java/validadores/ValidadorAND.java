@@ -2,6 +2,8 @@ package validadores;
 
 import excecoes.*;
 import modelo.*;
+
+import java.util.HashMap;
 import java.util.Map;
 
 public class ValidadorAND implements validadores.ValidadorPreRequisito {
@@ -14,7 +16,7 @@ public class ValidadorAND implements validadores.ValidadorPreRequisito {
     }
 
     @Override
-    public void verificarValidador(Aluno aluno, Disciplina disciplinaAlvo) throws ValidacaoMatriculaException {
+    public void verificarValidador(Aluno aluno, Disciplina disciplinaAlvo, HashMap<Disciplina, String> turmasRejeitadas) throws ValidacaoMatriculaException {
         if (aluno == null || preRequisito1 == null || preRequisito2 == null) {
             throw new ValidacaoMatriculaException("Erro interno: Aluno ou pré-requisitos nulos para validação AND.");
         }
@@ -44,7 +46,7 @@ public class ValidadorAND implements validadores.ValidadorPreRequisito {
             } else {
                 message += " A disciplina '" + preRequisito2.getNome() + "' não foi atendida.";
             }
-
+            turmasRejeitadas.put(disciplinaAlvo, message);
             throw new PreRequisitoNaoCumpridoException(message);
         }
     }

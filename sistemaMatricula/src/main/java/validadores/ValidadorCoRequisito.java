@@ -2,11 +2,13 @@ package validadores;
 
 import excecoes.*;
 import modelo.*;
+
+import java.util.HashMap;
 import java.util.List;
 
 public class ValidadorCoRequisito  {
 
-    public void validarCoRequisitos(Aluno aluno, Disciplina disciplinaAlvo) throws ValidacaoMatriculaException {
+    public void validarCoRequisitos(Aluno aluno, Disciplina disciplinaAlvo, Turma turmaDesejada, HashMap<Disciplina, String> turmasRejeitadas) throws ValidacaoMatriculaException {
         List<Disciplina> coRequisitos = disciplinaAlvo.getCoRequisitos();
         if (aluno == null || coRequisitos == null) {
             throw new ValidacaoMatriculaException("Erro interno: Aluno ou lista de co-requisitos nula.");
@@ -27,6 +29,7 @@ public class ValidadorCoRequisito  {
             if (!encontradoNoPlano) {
                 String message = "O co-requisito '" + coRequisitoEsperado.getNome() + "' da disciplina '" +
                         disciplinaAlvo.getNome() + "' não foi selecionado no planejamento futuro do aluno.";
+                turmasRejeitadas.put(disciplinaAlvo, message);
                 throw new CoRequisitoNaoAtendidoException(message);
             }
         }

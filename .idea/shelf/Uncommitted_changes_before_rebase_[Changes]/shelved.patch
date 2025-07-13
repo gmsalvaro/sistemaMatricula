@@ -1,0 +1,137 @@
+Index: sistemaMatricula/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project xmlns=\"http://maven.apache.org/POM/4.0.0\"\r\n         xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\r\n         xsi:schemaLocation=\"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd\">\r\n    <modelVersion>4.0.0</modelVersion>\r\n\r\n    <groupId>org.example</groupId>\r\n    <artifactId>sistemaMatricula</artifactId>\r\n    <version>1.0-SNAPSHOT</version>\r\n\r\n    <properties>\r\n        <maven.compiler.source>21</maven.compiler.source>\r\n        <maven.compiler.target>21</maven.compiler.target>\r\n        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>\r\n    </properties>\r\n\r\n\r\n    <dependencies>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-api</artifactId>\r\n            <version>5.10.2</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-params</artifactId>\r\n            <version>5.10.2</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n        <dependency>\r\n            <groupId>org.junit.jupiter</groupId>\r\n            <artifactId>junit-jupiter-engine</artifactId>\r\n            <version>5.10.2</version>\r\n            <scope>test</scope>\r\n        </dependency>\r\n    </dependencies>\r\n\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/sistemaMatricula/pom.xml b/sistemaMatricula/pom.xml
+--- a/sistemaMatricula/pom.xml	(revision 6df78cc69403dca518299c11c8b6ad3f21400a70)
++++ b/sistemaMatricula/pom.xml	(date 1752371983850)
+@@ -14,7 +14,6 @@
+         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+     </properties>
+ 
+-
+     <dependencies>
+         <dependency>
+             <groupId>org.junit.jupiter</groupId>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"a81c581d-1242-48a9-98b4-fa3c9baf1b4f\" name=\"Changes\" comment=\"Ajustando Sistema e Validadores\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/sistemaMatricula/controll/ResolveConflitoHorario.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/production/sistemaMatricula/controll/ResolveConflitoHorario.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/sistemaMatricula/servico/prints.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/production/sistemaMatricula/servico/verificaEntrada.class\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/out/test/sistemaMatricula/SistemaMatriculaTest.class\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/out/test/sistemaMatricula/SistemaMatriculaTest.class\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/SistemaMatricula.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/SistemaMatricula.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTest.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTest.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"module-info\" />\r\n        <option value=\"package-info\" />\r\n        <option value=\"JUnit5 Test Class\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n    &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;gmsalvaro&quot;\r\n    }\r\n    }</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/gmsalvaro/sistemaMatricula.git&quot;,\r\n    &quot;accountId&quot;: &quot;4e24af08-1924-4f83-8114-2c922639b475&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n    &quot;associatedIndex&quot;: 5\r\n    }</component>\r\n  <component name=\"ProjectId\" id=\"2zCj584NDCSdxGGObICFu7h8iIC\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.SimulacaoMatricula.executor\": \"Run\",\r\n    \"Downloaded.Files.Path.Enabled\": \"false\",\r\n    \"JUnit.SistemaMatriculaTest (1).executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina (1).executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplinaPre.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CargaHorariaExcedidaException.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoDeHorarioException.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_EletivaPorOptativa.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_MesmaPrecedencia.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoSimplesNaoCumprido.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComCoRequisito.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComPreRequisito.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.testCargaHorariaExcedidaException.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.testCoRequisitoNaoAtendido.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.testPreRequisitoSimplesNaoCumprido.executor\": \"Run\",\r\n    \"JUnit.SistemaMatriculaTest.testTurmaCheiaException.executor\": \"Run\",\r\n    \"Repository.Attach.Annotations\": \"false\",\r\n    \"Repository.Attach.JavaDocs\": \"false\",\r\n    \"Repository.Attach.Sources\": \"false\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"RunOnceActivity.git.unshallow\": \"true\",\r\n    \"SHARE_PROJECT_CONFIGURATION_FILES\": \"true\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary\": \"JUnit5\",\r\n    \"com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5\": \"\",\r\n    \"create.test.in.the.same.root\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"ignore.virus.scanning.warn.message\": \"true\",\r\n    \"last_directory_selection\": \"C:/Users/Meu/IdeaProjects/sistemaMatricula-Testes/sistemaMatricula/src/test/java\",\r\n    \"project.structure.last.edited\": \"Modules\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.2\",\r\n    \"settings.editor.selected.configurable\": \"preferences.pluginManager\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CreateTestDialog.Recents.Supers\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"MoveClassesOrPackagesDialog.RECENTS_KEY\">\r\n      <recent name=\"\" />\r\n    </key>\r\n    <key name=\"CreateTestDialog.RecentsKey\">\r\n      <recent name=\"\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"RunManager\" selected=\"JUnit.SistemaMatriculaTest\">\r\n    <configuration name=\"SistemaMatriculaTest\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"sistemaMatricula\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"SistemaMatriculaTest\" />\r\n      <option name=\"TEST_OBJECT\" value=\"class\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"sistemaMatricula\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"SistemaMatriculaTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SistemaMatriculaTest.tentarMatricularDisciplina_EletivaPorOptativa\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"sistemaMatricula\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"SistemaMatriculaTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"tentarMatricularDisciplina_EletivaPorOptativa\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SistemaMatriculaTest.tentarMatricularDisciplina_MesmaPrecedencia\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"sistemaMatricula\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"SistemaMatriculaTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"tentarMatricularDisciplina_MesmaPrecedencia\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva\" type=\"JUnit\" factoryName=\"JUnit\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <module name=\"sistemaMatricula\" />\r\n      <option name=\"PACKAGE_NAME\" value=\"\" />\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"SistemaMatriculaTest\" />\r\n      <option name=\"METHOD_NAME\" value=\"tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva\" />\r\n      <option name=\"TEST_OBJECT\" value=\"method\" />\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"JUnit.SistemaMatriculaTest\" />\r\n        <item itemvalue=\"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria\" />\r\n        <item itemvalue=\"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_MesmaPrecedencia\" />\r\n        <item itemvalue=\"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_EletivaPorOptativa\" />\r\n        <item itemvalue=\"JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"a81c581d-1242-48a9-98b4-fa3c9baf1b4f\" name=\"Changes\" comment=\"\" />\r\n      <created>1751241763267</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1751241763267</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Configura JDK-Correção codigo e começo Test\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1752042302043</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1752042302043</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Criando classes para Validadores\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1752290244712</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1752290244712</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Ajustabndo Sistema e Validadores\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1752351888933</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1752351888933</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Ajustabndo Sistema e Validadores\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1752355950213</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1752355950213</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Ajustabndo Sistema e Validadores\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1752361830631</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1752361830631</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Ajustando Sistema e Validadores\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1752365825359</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1752365825361</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Ajustando Sistema e Validadores\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1752369809347</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1752369809347</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"8\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Configura JDK-Correção codigo e começo Test\" />\r\n    <MESSAGE value=\"Criando classes para Validadores\" />\r\n    <MESSAGE value=\"Ajustabndo Sistema e Validadores\" />\r\n    <MESSAGE value=\"Ajustando Sistema e Validadores\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Ajustando Sistema e Validadores\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 6df78cc69403dca518299c11c8b6ad3f21400a70)
++++ b/.idea/workspace.xml	(date 1752371983933)
+@@ -51,51 +51,51 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.SimulacaoMatricula.executor": "Run",
+-    "Downloaded.Files.Path.Enabled": "false",
+-    "JUnit.SistemaMatriculaTest (1).executor": "Run",
+-    "JUnit.SistemaMatriculaTest.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina (1).executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplinaPre.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CargaHorariaExcedidaException.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoDeHorarioException.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_EletivaPorOptativa.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_MesmaPrecedencia.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoSimplesNaoCumprido.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComCoRequisito.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComPreRequisito.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.testCargaHorariaExcedidaException.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.testCoRequisitoNaoAtendido.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.testPreRequisitoSimplesNaoCumprido.executor": "Run",
+-    "JUnit.SistemaMatriculaTest.testTurmaCheiaException.executor": "Run",
+-    "Repository.Attach.Annotations": "false",
+-    "Repository.Attach.JavaDocs": "false",
+-    "Repository.Attach.Sources": "false",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "RunOnceActivity.git.unshallow": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+-    "create.test.in.the.same.root": "true",
+-    "git-widget-placeholder": "main",
+-    "ignore.virus.scanning.warn.message": "true",
+-    "last_directory_selection": "C:/Users/Meu/IdeaProjects/sistemaMatricula-Testes/sistemaMatricula/src/test/java",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.2",
+-    "settings.editor.selected.configurable": "preferences.pluginManager"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.SimulacaoMatricula.executor&quot;: &quot;Run&quot;,
++    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
++    &quot;JUnit.SistemaMatriculaTest (1).executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina (1).executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplinaPre.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CargaHorariaExcedidaException.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoDeHorarioException.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_EletivaPorOptativa.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_MesmaPrecedencia.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoSimplesNaoCumprido.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComCoRequisito.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_SucessoComPreRequisito.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.testCargaHorariaExcedidaException.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.testCoRequisitoNaoAtendido.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.testPreRequisitoSimplesNaoCumprido.executor&quot;: &quot;Run&quot;,
++    &quot;JUnit.SistemaMatriculaTest.testTurmaCheiaException.executor&quot;: &quot;Run&quot;,
++    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
++    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
++    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
++    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
++    &quot;last_directory_selection&quot;: &quot;C:/Users/Meu/IdeaProjects/sistemaMatricula-Testes/sistemaMatricula/src/test/java&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CreateTestDialog.Recents.Supers">
+       <recent name="" />
+@@ -160,10 +160,10 @@
+     <recent_temporary>
+       <list>
+         <item itemvalue="JUnit.SistemaMatriculaTest" />
+-        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria" />
++        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva" />
+         <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_MesmaPrecedencia" />
+         <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_EletivaPorOptativa" />
+-        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva" />
++        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria" />
+       </list>
+     </recent_temporary>
+   </component>

@@ -2,6 +2,8 @@ package validadores;
 
 import excecoes.*;
 import modelo.*;
+
+import java.util.HashMap;
 import java.util.Map;
 
 public class ValidadorOR implements validadores.ValidadorPreRequisito {
@@ -14,7 +16,7 @@ public class ValidadorOR implements validadores.ValidadorPreRequisito {
     }
 
     @Override
-    public void verificarValidador(Aluno aluno, Disciplina disciplinaAlvo) throws ValidacaoMatriculaException {
+    public void verificarValidador(Aluno aluno, Disciplina disciplinaAlvo, HashMap<Disciplina, String> turmasRejeitadas) throws ValidacaoMatriculaException {
         // Validação inicial para evitar NullPointerException
         if (aluno == null || preRequisito1 == null || preRequisito2 == null) {
             throw new ValidacaoMatriculaException("Erro interno: Aluno ou pré-requisitos nulos para validação OR.");
@@ -48,6 +50,7 @@ public class ValidadorOR implements validadores.ValidadorPreRequisito {
             } else { // !cumpriuPreRequisito2ComNota
                 mensagem += " '" + preRequisito2.getNome() + "' não foi atendido.";
             }
+            turmasRejeitadas.put(disciplinaAlvo, mensagem);
             throw new PreRequisitoNaoCumpridoException(mensagem);
         }
     }
