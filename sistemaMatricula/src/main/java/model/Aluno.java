@@ -11,14 +11,14 @@ public class Aluno {
     protected int cargaHorariaMax;
     protected int cargaHorariaAcumulada = 0;
     protected int creditoAcumulado = 0;
-    protected Map<Disciplina, Double> disciplinasCursadas;
+    protected Map<Disciplina, Double> historicoAluno;
     protected List<Turma> planejamentoFuturo;
 
     public Aluno(String nome, String matricula, int creditoMax, int cargaHorariaMax) {
         this.nome = nome;
         this.matricula = matricula;
         this.cargaHorariaMax = cargaHorariaMax;
-        this.disciplinasCursadas = new HashMap<>();
+        this.historicoAluno = new HashMap<>();
         this.planejamentoFuturo = new ArrayList<>();
     }
 
@@ -38,13 +38,13 @@ public class Aluno {
         return planejamentoFuturo;
     }
 
-    public Map<Disciplina, Double> getDisciplinasCursadas() {
-        return disciplinasCursadas; // Retorna o Map
+    public Map<Disciplina, Double> getHistoricoAluno() {
+        return historicoAluno;
     }
 
     public void adicionarDisciplinaCursada(Disciplina disciplina, double nota) {
         if (disciplina != null) {
-            disciplinasCursadas.put(disciplina, nota);
+            historicoAluno.put(disciplina, nota);
             if(nota >= 60)
                 creditoAcumulado += disciplina.getCredito();
         }
@@ -63,12 +63,7 @@ public class Aluno {
             cargaHorariaAcumulada -= turma.getDisciplina().cargaHoraria;
         }
     }
-    public int getCargaHorariaAtualNoPlanejamento() { // Novo método
-//        int cargaHorariaAtual = 0;
-//        for (Turma turma : planejamentoFuturo) {
-//            cargaHorariaAtual += turma.getDisciplina().getCargaHoraria(); // Soma carga horária
-//        }
-//        return cargaHorariaAtual;
+    public int getCargaHorariaAtualNoPlanejamento() {
         return cargaHorariaAcumulada;
     }
 

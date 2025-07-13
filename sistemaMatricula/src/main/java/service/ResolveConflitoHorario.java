@@ -5,7 +5,7 @@ import model.*;
 
 import java.util.HashMap;
 
-public class ServiceResolveConflitoHorario {
+public class ResolveConflitoHorario {
 
     protected void resolverConflitoHorario(Aluno aluno, Turma turmaDesejada, Disciplina disciplinaDesejada, HashMap<Disciplina, String> turmasRejeitadas ) throws ConflitoDeHorarioException {
        Turma turmaComConflitoExistente = null;

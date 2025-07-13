@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SistemaMatriculaTest {
-    private ServiceSistemaMatricula sistema;
+    private SistemaMatricula sistema;
 
     private Aluno alunoPadrao;
     private Disciplina prog1;
@@ -43,7 +43,7 @@ class SistemaMatriculaTest {
 
     @BeforeEach
     void setup() {
-        sistema = new ServiceSistemaMatricula();
+        sistema = new SistemaMatricula();
 
         alunoPadrao = new Aluno("Alice", "2023001", 24, 180);
 

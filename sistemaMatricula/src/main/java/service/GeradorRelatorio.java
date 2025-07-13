@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ServiceGeradorRelatorio {
+public class GeradorRelatorio {
     public String gerarRelatorioFinalAluno(Aluno aluno, HashMap<Disciplina, String> disciplinasRejeitadas) {
         StringBuilder sb = new StringBuilder();
         sb.append("--- Relatório Final de Matrícula para: ").append(aluno.getNome()).append(" (Matrícula: ").append(aluno.getMatricula()).append(") ---\n");

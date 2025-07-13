@@ -20,15 +20,15 @@ public class ValidadorAND implements validadores.ValidadorPreRequisito {
         if (aluno == null || preRequisito1 == null || preRequisito2 == null) {
             throw new ValidacaoMatriculaException("Erro interno: Aluno ou pré-requisitos nulos para validação AND.");
         }
-        Map<Disciplina, Double> disciplinasCursadasMap = aluno.getDisciplinasCursadas();
+        Map<Disciplina, Double> historicoAluno = aluno.getHistoricoAluno();
         boolean cumpriuPreRequisito1ComNota = false;
         boolean cumpriuPreRequisito2ComNota = false;
-        if (disciplinasCursadasMap.containsKey(preRequisito1) &&
-                disciplinasCursadasMap.get(preRequisito1) >= 60.0) {
+        if (historicoAluno.containsKey(preRequisito1) &&
+                historicoAluno.get(preRequisito1) >= 60.0) {
             cumpriuPreRequisito1ComNota = true;
         }
-        if (disciplinasCursadasMap.containsKey(preRequisito2) &&
-                disciplinasCursadasMap.get(preRequisito2) >= 60.0) {
+        if (historicoAluno.containsKey(preRequisito2) &&
+                historicoAluno.get(preRequisito2) >= 60.0) {
             cumpriuPreRequisito2ComNota = true;
         }
         if (!(cumpriuPreRequisito1ComNota && cumpriuPreRequisito2ComNota)) {

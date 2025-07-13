@@ -1,25 +1,23 @@
 import model.*;
-import service.ServiceGeradorRelatorio;
+import service.GeradorRelatorio;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
+
 import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Comparator;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ServiceRelatorioTest {
+class GeradorRelatorioTest {
 
-    private ServiceGeradorRelatorio geradorRelatorio;
+    private GeradorRelatorio geradorRelatorio;
     private Aluno alunoTeste;
     private Disciplina introProg, calculo2, engSoft, graficos, fis2;
     private Turma turmaIntroProg, turmaCalculo2, turmaEngSoft, turmaGraficos, turmaFis2;
 
     @BeforeEach
     void setup() {
-        geradorRelatorio = new ServiceGeradorRelatorio();
+        geradorRelatorio = new GeradorRelatorio();
 
         alunoTeste = new Aluno("Roberto Carlos", "2024003", 40, 250);
 

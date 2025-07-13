@@ -6,16 +6,16 @@ import validadores.*;
 
 import java.util.HashMap;
 
-public class ServiceSistemaMatricula {
-    private ServiceResolveConflitoHorario resolveConflitoHorario;
-    private ServiceGeradorRelatorio geradorRelatorio;
+public class SistemaMatricula {
+    private ResolveConflitoHorario resolveConflitoHorario;
+    private GeradorRelatorio geradorRelatorio;
     private HashMap<Disciplina, String> turmasRejeitadas = new HashMap<>();
     private ValidadorCargaHoraria validadorCargaHoraria;
     private ValidadorCoRequisito validadorCoRequisito;
 
-    public ServiceSistemaMatricula() {
-        this.resolveConflitoHorario = new ServiceResolveConflitoHorario();
-        this.geradorRelatorio = new ServiceGeradorRelatorio();
+    public SistemaMatricula() {
+        this.resolveConflitoHorario = new ResolveConflitoHorario();
+        this.geradorRelatorio = new GeradorRelatorio();
         this.validadorCargaHoraria = new ValidadorCargaHoraria();
         this.validadorCoRequisito = new ValidadorCoRequisito();
     }

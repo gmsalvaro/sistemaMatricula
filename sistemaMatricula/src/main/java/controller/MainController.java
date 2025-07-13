@@ -1,13 +1,13 @@
 package controller;
 import model.*;
 import excecoes.*;
-import service.ServiceSistemaMatricula;
+import service.SistemaMatricula;
 import java.util.HashMap;
 import java.util.List;
 
 public class MainController {
     public static void main(String[] args) {
-        ServiceSistemaMatricula sistema = new ServiceSistemaMatricula();
+        SistemaMatricula sistema = new SistemaMatricula();
         HashMap<Disciplina, String> turmasRejeitadas = new HashMap<>();
 
         Aluno aluno = new Aluno("Roberto Carlos", "2024003", 40, 250);
