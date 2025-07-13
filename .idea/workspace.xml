@@ -6,16 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="a81c581d-1242-48a9-98b4-fa3c9baf1b4f" name="Changes" comment="Ajustabndo Sistema e Validadores">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/controll/SistemaMatricula.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/modelo/Aluno.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sistemaMatricula/modelo/Aluno.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/modelo/Disciplina.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sistemaMatricula/modelo/Disciplina.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorCreditos.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorPreRequisito.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sistemaMatricula/validadores/ValidadorPreRequisito.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/test/sistemaMatricula/SistemaMatriculaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/sistemaMatricula/SistemaMatriculaTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/ResolveConflitoHorario.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/ResolveConflitoHorario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/SistemaMatricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/SistemaMatricula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Disciplina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCreditos.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCreditosMin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +37,7 @@
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/gmsalvaro/sistemaMatricula.git",
-    "accountId": "4e24af08-1924-4f83-8114-2c922639b475"
+    "accountId": "2d6afeac-dff5-41a0-a226-8267e7b37923"
   }
 }]]></component>
   <component name="ProjectColorInfo">{
@@ -69,6 +61,7 @@
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoDeHorarioException.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException.executor": "Run",
+    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoANDNaoCumprido.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoComNotaInsuficiente.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_PreRequisitoSimplesNaoCumprido.executor": "Run",
@@ -88,7 +81,7 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "Branch-for-alvaro",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "last_directory_selection": "C:/Users/Meu/IdeaProjects/sistemaMatricula-Testes/sistemaMatricula/src/test/java",
     "project.structure.last.edited": "Modules",
@@ -108,22 +101,21 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException">
+  <component name="RunManager" selected="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva">
+    <configuration name="SistemaMatriculaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sistemaMatricula" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_CargaHorariaExcedidaException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemaMatricula" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
       <option name="METHOD_NAME" value="tentarMatricularDisciplina_CargaHorariaExcedidaException" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sistemaMatricula" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
-      <option name="METHOD_NAME" value="tentarMatricularDisciplina_CoRequisitoNaoAtendido" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -149,11 +141,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemaMatricula" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
-      <option name="METHOD_NAME" value="tentarMatricularDisciplina_TurmaCheiaException" />
+      <option name="METHOD_NAME" value="tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -161,11 +153,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva" />
+        <item itemvalue="JUnit.SistemaMatriculaTest" />
         <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException" />
         <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CargaHorariaExcedidaException" />
         <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoDeHorarioException" />
-        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException" />
-        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido" />
       </list>
     </recent_temporary>
   </component>
