@@ -5,21 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a81c581d-1242-48a9-98b4-fa3c9baf1b4f" name="Changes" comment="Ajustando Sistema e Validadores">
-      <change beforePath="$PROJECT_DIR$/.idea/sistemaMatricula.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sistemaMatricula.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/GeradorRelatorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/GeradorRelatorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/ResolveConflitoHorario.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/ResolveConflitoHorario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/controll/ResolveConflitoHorario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/sistemaMatricula/controll/ResolveConflitoHorario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/servico/prints.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/sistemaMatricula/servico/verificaEntrada.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/sistemaMatricula/SistemaMatriculaTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/test/sistemaMatricula/SistemaMatriculaTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/SistemaMatricula.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/controll/SistemaMatricula.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Aluno.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Disciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Disciplina.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Turma.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/modelo/Turma.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorAND.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorAND.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCargaHoraria.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCargaHoraria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCoRequisito.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCoRequisito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCreditosMin.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorCreditosMin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorOR.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorOR.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorPreRequisito.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorPreRequisito.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorSimples.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/main/java/validadores/ValidadorSimples.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sistemaMatricula/src/test/java/SistemaMatriculaTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +64,7 @@
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CoRequisitoNaoAtendido.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ConflitoDeHorarioException.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_CreditosInsuficienteException.executor": "Run",
+    "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_EletivaPorOptativa.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_MesmaPrecedencia.executor": "Run",
     "JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva.executor": "Run",
@@ -125,6 +117,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="sistemaMatricula" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
+      <option name="METHOD_NAME" value="tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_EletivaPorOptativa" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="sistemaMatricula" />
       <option name="PACKAGE_NAME" value="" />
@@ -155,23 +157,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="sistemaMatricula" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SistemaMatriculaTest" />
-      <option name="METHOD_NAME" value="tentarMatricularDisciplina_TurmaCheiaException" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.SistemaMatriculaTest" />
+        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_DescarteAutomaticoPorCargaHoraria" />
         <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_MesmaPrecedencia" />
         <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_EletivaPorOptativa" />
         <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_ObrigatoriaPrevaleceSobreEletiva" />
-        <item itemvalue="JUnit.SistemaMatriculaTest.tentarMatricularDisciplina_TurmaCheiaException" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +223,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752365825361</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Ajustando Sistema e Validadores">
+      <option name="closed" value="true" />
+      <created>1752369809347</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752369809347</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
