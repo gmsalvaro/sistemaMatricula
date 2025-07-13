@@ -3,24 +3,21 @@ package validadores;
 import modelo.Aluno;
 import modelo.Disciplina;
 import modelo.Turma;
+import excecoes.ValidacaoMatriculaException;
+import excecoes.CoRequisitoNaoAtendidoException;
 
 import java.util.List;
 
 public class ValidadorCoRequisito  {
-    protected List< Disciplina > coRequisitos;
-    private Aluno aluno;
 
+    public void validarCoRequisitos(Aluno aluno, Disciplina disciplinaAlvo) throws ValidacaoMatriculaException {
+        List<Disciplina> coRequisitos = disciplinaAlvo.getCoRequisitos();
+        if (aluno == null || coRequisitos == null) {
+            throw new ValidacaoMatriculaException("Erro interno: Aluno ou lista de co-requisitos nula.");
+        }
 
-    public ValidadorCoRequisito(Aluno aluno, List< Disciplina > coRequisitos) {
-        this.coRequisitos = coRequisitos;
-        this.aluno = aluno;
-    }
-
-    public boolean validarCoRequisitos() {
-        // ESSA É A LÓGICA CORRETA PARA VALIDAR SE TODOS OS CO-REQUISITOS ESTÃO PRESENTES
-        // Corrigido da sua versão anterior
-        if (coRequisitos == null || coRequisitos.isEmpty()) {
-            return true; // Se não há co-requisitos, a validação passa
+        if (coRequisitos.isEmpty()) {
+            return;
         }
 
         for (Disciplina coRequisitoEsperado : coRequisitos) {
@@ -28,15 +25,14 @@ public class ValidadorCoRequisito  {
             for (Turma turmaPlanejada : aluno.getPlanejamentoFuturo()) {
                 if (turmaPlanejada.getDisciplina().equals(coRequisitoEsperado)) {
                     encontradoNoPlano = true;
-                    break; // Encontrou este co-requisito, pode parar de procurar por ele.
+                    break;
                 }
             }
-            // Se, após verificar todo o planejamento, este co-requisito NÃO foi encontrado,
-            // então a validação geral falha para este conjunto de co-requisitos.
             if (!encontradoNoPlano) {
-                return false; // Retorna false imediatamente se um co-requisito obrigatório não for encontrado.
+                String message = "O co-requisito '" + coRequisitoEsperado.getNome() + "' da disciplina '" +
+                        disciplinaAlvo.getNome() + "' não foi selecionado no planejamento futuro do aluno.";
+                throw new CoRequisitoNaoAtendidoException(message);
             }
         }
-        return true; // Se o loop terminou, todos os co-requisitos foram encontrados.
     }
 }

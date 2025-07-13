@@ -1,59 +1,56 @@
 package validadores;
-import modelo.Aluno;
 
+import modelo.Aluno;
+import modelo.Disciplina;
+import excecoes.ValidacaoMatriculaException;
+import excecoes.PreRequisitoNaoCumpridoException;
 import java.util.Map;
 
 public class ValidadorOR implements validadores.ValidadorPreRequisito {
-    modelo.Disciplina preRequisito1;
-    modelo.Disciplina preRequisito2;
-    private String mensagemErro;
+    private Disciplina preRequisito1;
+    private Disciplina preRequisito2;
 
-    public ValidadorOR(modelo.Disciplina preRequisito1, modelo.Disciplina preRequisito2) {
+    public ValidadorOR(Disciplina preRequisito1, Disciplina preRequisito2) {
         this.preRequisito1 = preRequisito1;
         this.preRequisito2 = preRequisito2;
     }
 
     @Override
-    public boolean verificarValidador(Aluno aluno) {
-        Map<modelo.Disciplina, Double> disciplinasCursadasMap = aluno.getDisciplinasCursadas();
-        boolean cumpriuPreRequisito1 = false ;
-        boolean cumpriuPreRequisito2 = false;
-        for (modelo.Disciplina disciplinaCursada : disciplinasCursadasMap.keySet()) {
-            if (disciplinaCursada.equals(preRequisito1)) {
-                cumpriuPreRequisito1 = true;
-            }
-            if (disciplinaCursada.equals(preRequisito2)) {
-
-                cumpriuPreRequisito2 = true;
-            }
-            if (cumpriuPreRequisito1 || cumpriuPreRequisito2) {
-                break;
-            }
+    public void verificarValidador(Aluno aluno, Disciplina disciplinaAlvo) throws ValidacaoMatriculaException {
+        // Validação inicial para evitar NullPointerException
+        if (aluno == null || preRequisito1 == null || preRequisito2 == null) {
+            throw new ValidacaoMatriculaException("Erro interno: Aluno ou pré-requisitos nulos para validação OR.");
         }
 
-        if (cumpriuPreRequisito1 || cumpriuPreRequisito2) {
-            return true;
+        Map<Disciplina, Double> disciplinasCursadasMap = aluno.getDisciplinasCursadas();
+        boolean cumpriuPreRequisito1ComNota = false;
+        boolean cumpriuPreRequisito2ComNota = false;
+
+        if (disciplinasCursadasMap.containsKey(preRequisito1) &&
+                disciplinasCursadasMap.get(preRequisito1) >= 60.0) {
+            cumpriuPreRequisito1ComNota = true;
+        }
+
+        // Verifica o segundo pré-requisito (se cursou e se a nota é suficiente)
+        if (disciplinasCursadasMap.containsKey(preRequisito2) &&
+                disciplinasCursadasMap.get(preRequisito2) >= 60.0) {
+            cumpriuPreRequisito2ComNota = true;
+        }
+
+        if (cumpriuPreRequisito1ComNota || cumpriuPreRequisito2ComNota) {
+            return;
         } else {
-            // Constrói a mensagem de erro detalhada
-            StringBuilder sb = new StringBuilder("Pré-requisito(s) não cumprido(s): ");
-            if (!cumpriuPreRequisito1) {
-                sb.append(preRequisito1.getNome());
+            String mensagem = "Para '" + disciplinaAlvo.getNome() + "', é necessário ter cursado E APROVADO em '" +
+                    preRequisito1.getNome() + "' OU '" + preRequisito2.getNome() + "'.";
+
+            if (!cumpriuPreRequisito1ComNota && !cumpriuPreRequisito2ComNota) {
+                mensagem += " Nenhum dos pré-requisitos foi atendido.";
+            } else if (!cumpriuPreRequisito1ComNota) {
+                mensagem += " '" + preRequisito1.getNome() + "' não foi atendido.";
+            } else { // !cumpriuPreRequisito2ComNota
+                mensagem += " '" + preRequisito2.getNome() + "' não foi atendido.";
             }
-            if (!cumpriuPreRequisito2) {
-                if (!cumpriuPreRequisito1) {
-                    sb.append(" e ");
-                }
-                sb.append(preRequisito2.getNome());
-            }
-            this.mensagemErro = sb.toString();
-            return false;
+            throw new PreRequisitoNaoCumpridoException(mensagem);
         }
     }
-
-    @Override
-    public String getMensagemErro() {
-        return mensagemErro;
-    }
-
 }
-
