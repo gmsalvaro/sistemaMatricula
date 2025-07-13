@@ -16,10 +16,9 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class SistemaMatriculaTest {
-
     private SistemaMatricula sistema;
-    private Aluno alunoPadrao;
 
+    private Aluno alunoPadrao;
     private Disciplina prog1;
     private Disciplina labProg1;
     private Disciplina estruturaDados;
@@ -129,7 +128,6 @@ class SistemaMatriculaTest {
         });
         assertFalse(alunoPadrao.getPlanejamentoFuturo().contains(turmaEstruturaDados));
     }
-
 
     @Test
     void tentarMatricularDisciplina_CoRequisitoNaoAtendido() {
